@@ -22,6 +22,18 @@ class NavBar extends Component {
                  <button>Login</button>
                  <button>Sign up</button>
             </div>
+            <div className="center__search">
+            <input               
+            autoComplete="off"
+            placeholder="interest..."                   
+            className="center-input"
+            />
+              <input               
+            autoComplete="off"
+            placeholder="Country..."                   
+            className="center-input"
+            />
+            </div>
         </div>
         )
     }

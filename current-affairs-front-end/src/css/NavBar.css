@@ -8,10 +8,25 @@
 .navbar-container .nav-items {
   display: flex;
 }
-.navbar-container ul {
+.navbar-container .nav-items ul {
   display: flex;
   margin: 50px;
 }
-.navbar-container ul li {
+.navbar-container .nav-items ul li {
   margin: 50px;
+  font-weight: 400;
+  font-size: 40px;
+}
+.navbar-container .nav-items button {
+  border: 1px solid green;
+  width: 120px;
+  height: 40px;
+}
+.navbar-container .center__search {
+  margin-left: 20%;
+}
+.navbar-container .center__search .center-input {
+  width: 24%;
+  height: 60px;
+  border-radius: 5px;
 }
