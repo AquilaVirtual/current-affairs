@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import '../css/LandingPage.css';
+import NavBar from './NavBar'
 
 class LandingPage extends Component {
     constructor() {
@@ -7,13 +8,13 @@ class LandingPage extends Component {
         this.state = {
 
          } 
-
     }
-
     render() {
         return (
-            <div>LandingPage Here</div>
-        )
+            <div className="landing-container">
+            <NavBar />
+            <div>LandingPage here</div>
+        </div>)
     }
 
 }
