@@ -2,31 +2,87 @@
   width: 100%;
   height: 80vh;
   color: white;
-  background-image: url('../imgs/globe1.jpg');
-  opacity: .7;
+  background-image: url('../imgs/globe2.png');
 }
 .navbar-container .nav-items {
   display: flex;
+  margin-left: 60px;
 }
 .navbar-container .nav-items ul {
   display: flex;
   margin: 50px;
+  font-weight: 900;
 }
 .navbar-container .nav-items ul li {
   margin: 50px;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 20px;
 }
-.navbar-container .nav-items button {
-  border: 1px solid green;
+.navbar-container .nav-items .buttons-wrap {
+  display: flex;
+  margin: 96px 0 0 10%;
+}
+.navbar-container .nav-items .buttons-wrap .login {
+  text-align: center;
   width: 120px;
   height: 40px;
+  margin-top: 14px;
+  cursor: pointer;
 }
-.navbar-container .center__search {
-  margin-left: 20%;
+.navbar-container .nav-items .buttons-wrap .sign-up {
+  border: 1px solid #52d67b;
+  border-radius: 3px;
+  color: #52d67b;
+  cursor: pointer;
+  height: 40px;
+  padding: 10px 44px;
 }
-.navbar-container .center__search .center-input {
+.navbar-container .center-search {
+  margin-left: 23%;
+}
+.navbar-container .center-search .input-left {
+  border-right: 1px solid darkgray;
   width: 24%;
   height: 60px;
-  border-radius: 5px;
+  line-height: 30px;
+  outline: 0;
+  box-sizing: inherit;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px 35px 15px 50px;
+  border-radius: 5px 0 0 5px;
+}
+.navbar-container .center-search .input-right {
+  width: 24%;
+  height: 60px;
+  line-height: 30px;
+  outline: 0;
+  box-sizing: inherit;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px 35px 15px 50px;
+  border-radius: 0 5px 5px 0;
+}
+.navbar-container .center-search .btn-main-cta {
+  background-color: #52d67b;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 21px 16px;
+  margin-left: 15px;
+}
+.navbar-container .headline {
+  margin-left: 35%;
+  font-size: 40px;
+}
+.navbar-container .headline .last-word {
+  font-weight: 600;
 }

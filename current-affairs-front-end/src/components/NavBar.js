@@ -19,20 +19,24 @@ class NavBar extends Component {
                  <li>Economics</li>
                  <li>Causes</li>
              </ul>
-                 <button>Login</button>
-                 <button>Sign up</button>
+             <div className="buttons-wrap">
+                 <div className="login">Login</div>
+                 <div className="sign-up">Sign up</div>
+                 </div>
             </div>
-            <div className="center__search">
+            <div className="headline">Search. Learn. <span className="last-word">Know.</span></div>
+            <div className="center-search">
             <input               
             autoComplete="off"
-            placeholder="interest..."                   
-            className="center-input"
+            placeholder="Interest..."                   
+            className="input-left"
             />
               <input               
             autoComplete="off"
             placeholder="Country..."                   
-            className="center-input"
+            className="input-right"
             />
+            <button className="btn-main-cta">Search Countries</button>
             </div>
         </div>
         )

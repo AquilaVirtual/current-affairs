@@ -3,35 +3,93 @@
     width: 100%;
     height: 80vh;
     color: white;
-    background-image: url('../imgs/globe1.jpg');
-    opacity: .7;
+    background-image: url('../imgs/globe2.png');
+    // opacity: .4;
     .nav-items {
         display: flex;
+        margin-left: 60px;
         ul {
             display: flex;
             margin: 50px;
+            font-weight: 900;
           
          li {
-                margin: 50px;
-                font-weight: 400;
-                font-size: 40px;
+            margin: 50px;
+            font-weight: 400;
+            font-size: 20px;
             }
         }
 
-        button {
-            border: 1px solid green;
+        .buttons-wrap {
+            display: flex;
+            margin: 96px 0 0 10%;
+            .login {                
+            text-align: center;               
             width: 120px;
             height: 40px;
+            margin-top: 14px;
+            cursor: pointer;
+            }
+            .sign-up {
+                border: 1px solid #52d67b;
+                border-radius: 3px;
+                color: #52d67b;
+                cursor: pointer;                
+                height: 40px;               
+                padding: 10px 44px;             
+                
+             }
         }
     }
-    .center__search {
-        margin-left: 20%;
-      .center-input {       
+    .center-search {
+        margin-left: 23%;
+        .input-left { 
+            border-right: 1px solid darkgray;      
+            width: 24%;
+            height: 60px;
+            line-height: 30px;
+            outline: 0;
+            box-sizing: inherit;
+            background-color: #fff;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 15px 35px 15px 50px;
+            border-radius:  5px 0 0 5px;             
+        }
+      .input-right {       
         width: 24%;
         height: 60px;
-        border-radius: 5px;
-             
+        line-height: 30px;
+        outline: 0;
+        box-sizing: inherit;
+        background-color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 15px 35px 15px 50px;
+        border-radius: 0 5px 5px 0;             
     }
    
+    .btn-main-cta {
+    background-color: #52d67b;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 21px 16px;
+    margin-left: 15px;
+    }
+   }
+
+   .headline {
+    margin-left: 35%;
+    font-size: 40px;
+    .last-word {     
+        font-weight: 600;      
+    }
    }
 }
