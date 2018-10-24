@@ -13,7 +13,14 @@ class LandingPage extends Component {
         return (
             <div className="landing-container">
             <NavBar />
-            <div>LandingPage here</div>
+            <div className="list-container">
+            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <div className="check-list">Get exclusive access to the latest news!</div>
+            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <div className="check-list">Receive updates when relevant news happen!</div>
+            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <div className="check-list">Be in the know!</div>
+            </div>
         </div>)
     }
 

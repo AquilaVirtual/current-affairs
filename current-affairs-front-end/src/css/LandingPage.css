@@ -4,3 +4,18 @@
   width: 100%;
   min-width: 100vw;
 }
+.landing-container .list-container {
+  display: flex;
+}
+.landing-container .list-container .check-list {
+  display: table-cell;
+  font-size: 28px;
+  font-weight: 400;
+  padding: 0 50px;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 33%;
+  color: #5a4d4d;
+  margin: 20px;
+}
