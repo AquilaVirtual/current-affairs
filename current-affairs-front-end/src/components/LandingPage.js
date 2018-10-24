@@ -21,6 +21,7 @@ class LandingPage extends Component {
             <img alt="green marker" src={"../imgs/green-mark.jpg"} />
             <div className="check-list">Be in the know!</div>
             </div>
+            <img className="middle-image"alt="purple earth" src={"../imgs/p-earth.png"} />
         </div>)
     }
 

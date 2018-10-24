@@ -15,7 +15,7 @@ class User extends React.Component {
                 error: false,
                 errorMessage: ''
             };
-        }        
+        }       
   
         render() {
             return (
