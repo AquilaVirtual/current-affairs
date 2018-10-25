@@ -24,6 +24,7 @@
   margin-top: 20px;
 }
 .landing-container .middle-image {
-  height: 100px;
-  width: 400px;
+  height: 400px;
+  width: 40%;
+  margin: 40px;
 }

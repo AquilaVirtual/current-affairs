@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/LandingPage.css';
 import NavBar from './NavBar'
 import green from '../imgs/green.jpg';
-import earth from "../imgs/earth.png";
+import earth from "../imgs/earth.jpg";
 class LandingPage extends Component {
     constructor() {
         super();
