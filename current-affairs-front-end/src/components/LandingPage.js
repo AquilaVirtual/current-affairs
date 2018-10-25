@@ -16,13 +16,16 @@ class LandingPage extends Component {
             <NavBar />
             <div className="list-container">
             <img className="green-marker" alt="green marker" src={green} />
-            <div className="check-list">Get exclusive access to the latest news!</div>
+            <div className="check-list">Get exclusive access to the latest news</div>
             <img className="green-marker" alt="green marker" src={green} />
-            <div className="check-list">Receive updates when relevant news happen!</div>
+            <div className="check-list">Receive updates when relevant news happen</div>
             <img className="green-marker" alt="green marker" src={green} />
-            <div className="check-list">Be in the know!</div>
+            <div className="check-list">Be in the know</div>
             </div>
+            <div className="middle-content">
+            <div className="promo-title">Find the news that everyone is talking about</div>
             <img className="middle-image"alt="purple earth" src={earth} />
+            </div>
         </div>)
     }
 

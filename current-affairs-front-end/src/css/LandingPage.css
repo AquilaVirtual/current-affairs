@@ -23,8 +23,17 @@
   width: 60px;
   margin-top: 20px;
 }
-.landing-container .middle-image {
+.landing-container .middle-content {
+  display: flex;
+}
+.landing-container .middle-content .promo-title {
+  color: #632891;
+  font-size: 80px;
+  width: 500px;
+  margin: auto;
+}
+.landing-container .middle-content .middle-image {
   height: 400px;
   width: 40%;
-  margin: 40px;
+  margin: 40px 90px 20px;
 }
