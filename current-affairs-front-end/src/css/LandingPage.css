@@ -3,6 +3,7 @@
   min-height: 100vh;
   width: 100%;
   min-width: 100vw;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .landing-container .list-container {
   display: flex;
