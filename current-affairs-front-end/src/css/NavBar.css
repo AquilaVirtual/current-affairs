@@ -38,11 +38,11 @@
   padding: 10px 44px;
 }
 .navbar-container .center-search {
-  margin-left: 23%;
+  margin-left: 29%;
+  display: flex;
 }
 .navbar-container .center-search .input-left {
   border-right: 1px solid darkgray;
-  width: 22%;
   height: 60px;
   line-height: 30px;
   outline: 0;
@@ -51,25 +51,36 @@
   display: inline-block;
   font-size: 18px;
   font-weight: 400;
-  padding-left: 10px;
-}
-.navbar-container .center-search .fa-search {
-  color: #7c7272;
-  padding: 21px;
-  height: 60px;
-  width: 40px;
-  background: white;
+  padding: 0 10px;
   border-radius: 5px 0 0 5px;
 }
-.navbar-container .center-search .fa-map-marker-alt {
-  color: #7c7272;
-  padding: 21px;
-  height: 60px;
-  width: 40px;
-  background: white;
+.navbar-container .center-search .search-inputs-left input {
+  padding-left: 40px;
+}
+.navbar-container .center-search .search-inputs-left {
+  position: relative;
+}
+.navbar-container .center-search .search-inputs-left i {
+  left: 0;
+  top: 14px;
+  position: absolute;
+  padding: 9px 14px;
+  color: darkgray;
+}
+.navbar-container .center-search .search-inputs-right input {
+  padding-left: 40px;
+}
+.navbar-container .center-search .search-inputs-right {
+  position: relative;
+}
+.navbar-container .center-search .search-inputs-right i {
+  left: 0;
+  top: 14px;
+  position: absolute;
+  padding: 9px 14px;
+  color: darkgray;
 }
 .navbar-container .center-search .input-right {
-  width: 22%;
   height: 60px;
   line-height: 30px;
   outline: 0;
@@ -78,7 +89,7 @@
   display: inline-block;
   font-size: 18px;
   font-weight: 400;
-  padding-left: 10px;
+  padding: 0 10px;
   border-radius: 0 5px 5px 0;
 }
 .navbar-container .center-search .btn-main-cta {

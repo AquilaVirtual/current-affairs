@@ -26,18 +26,22 @@ class NavBar extends Component {
             </div>
             <div className="headline">Search. Learn. <span className="last-word">Know.</span></div>
             <div className="center-search">
-            <i class="fa fa-search"></i>          
+            <div className="search-inputs-left">
             <input  
             autoComplete="off"
             placeholder="News title, Keword"                   
             className="input-left"
             />
+            <i class="fa fa-search"></i>          
+            </div>
+            <div className="search-inputs-right">
             <i class="fas fa-map-marker-alt"></i>
               <input               
             autoComplete="off"
             placeholder="Country..."                   
             className="input-right"
             />
+            </div>
             <button className="btn-main-cta">Search Countries</button>
             </div>
         </div>
