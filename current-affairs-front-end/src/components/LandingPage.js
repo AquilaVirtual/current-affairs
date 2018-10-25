@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../css/LandingPage.css';
 import NavBar from './NavBar'
-
+import green from '../imgs/green.jpg';
+import earth from "../imgs/earth.png";
 class LandingPage extends Component {
     constructor() {
         super();
@@ -14,14 +15,14 @@ class LandingPage extends Component {
             <div className="landing-container">
             <NavBar />
             <div className="list-container">
-            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <img className="green-marker" alt="green marker" src={green} />
             <div className="check-list">Get exclusive access to the latest news!</div>
-            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <img className="green-marker" alt="green marker" src={green} />
             <div className="check-list">Receive updates when relevant news happen!</div>
-            <img alt="green marker" src={"../imgs/green-mark.jpg"} />
+            <img className="green-marker" alt="green marker" src={green} />
             <div className="check-list">Be in the know!</div>
             </div>
-            <img className="middle-image"alt="purple earth" src={"../imgs/p-earth.png"} />
+            <img className="middle-image"alt="purple earth" src={earth} />
         </div>)
     }
 
