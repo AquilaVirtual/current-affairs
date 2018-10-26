@@ -13,10 +13,10 @@ class NavBar extends Component {
             <div className="nav-items">
              <div className="logo" >Current <p>Affairs</p></div>
              <ul>
-                 <li>Entertainment</li>
-                 <li>Politics</li>
-                 <li>Economics</li>
-                 <li>Causes</li>
+                 <li><a href="#">Entertainment</a></li>
+                 <li><a href="#">Politics</a></li>
+                 <li><a href="#">Economics</a></li>
+                 <li><a href="#">Causes</a></li>
              </ul>
              <div className="buttons-wrap">
                  <div className="login">Login</div>
@@ -28,7 +28,7 @@ class NavBar extends Component {
             <div className="search-inputs-left">
             <input  
             autoComplete="off"
-            placeholder="News title, Keword"                   
+            placeholder="News title, Keyword"                   
             className="input-left"
             />
             <i class="fa fa-search"></i>          

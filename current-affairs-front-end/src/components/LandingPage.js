@@ -27,12 +27,25 @@ class LandingPage extends Component {
             <img className="middle-image"alt="purple earth" src={earth} />
             </div>
             <div className="bottom">
+            <div className="bottom-inputs">
+            <div className="email-bar">
             <input
                autoComplete="off"
-               placeholder="Subscribe"                   
-               className="subscribe"
-                />
+               placeholder="Your email"                   
+               className="subscribe-email"
+            />
+            <i class="fas fa-envelope"></i>
+            </div>
+            <div className="country-bar">
+            <i class="fas fa-globe"></i>
+            <input
+               autoComplete="off"
+               placeholder="Country"                   
+               className="subscribe-country"
+            />
+            </div>
                 <button className="btn-subscribe-cta">Subscribe</button>
+            </div>
             </div>
             <div className="footer">
             <div className="logo" >Current <p>Affairs</p></div>

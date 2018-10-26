@@ -34,6 +34,9 @@
   font-size: 20px;
   cursor: pointer;
 }
+.navbar-container .nav-items ul li a {
+  color: white;
+}
 .navbar-container .nav-items ul :hover {
   color: gray;
   text-underline-position: below;
@@ -94,6 +97,17 @@
   padding: 9px 14px;
   color: darkgray;
 }
+.navbar-container .center-search .input-right {
+  height: 60px;
+  line-height: 30px;
+  outline: 0;
+  box-sizing: inherit;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+}
 .navbar-container .center-search .search-inputs-right input {
   padding-left: 40px;
 }
@@ -106,17 +120,6 @@
   position: absolute;
   padding: 9px 14px;
   color: darkgray;
-}
-.navbar-container .center-search .input-right {
-  height: 60px;
-  line-height: 30px;
-  outline: 0;
-  box-sizing: inherit;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 0 10px;
-  border-radius: 0 5px 5px 0;
 }
 .navbar-container .center-search .btn-main-cta {
   background-color: #52d67b;
