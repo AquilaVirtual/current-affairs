@@ -8,9 +8,23 @@
   display: flex;
   margin-left: 60px;
 }
+.navbar-container .nav-items .logo {
+  color: white;
+  margin: 60px 0 0 130px;
+  border: 1px dotted white;
+  height: 66px;
+  width: 170px;
+  border-radius: 5px;
+  padding: 10px 0 0 46px;
+  font-size: 22px;
+  font-family: monospace;
+  font-style: oblique;
+  font-variant: small-caps;
+  font-stretch: ultra-expanded;
+}
 .navbar-container .nav-items ul {
   display: flex;
-  margin: 50px;
+  margin: 50px 70px;
   font-weight: 900;
 }
 .navbar-container .nav-items ul li {
@@ -20,7 +34,7 @@
 }
 .navbar-container .nav-items .buttons-wrap {
   display: flex;
-  margin: 96px 0 0 10%;
+  margin: 70px 0 0 10%;
 }
 .navbar-container .nav-items .buttons-wrap .login {
   text-align: center;

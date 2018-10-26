@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/NavBar.css';
-
 class NavBar extends Component {
     constructor() {
         super();
@@ -12,7 +11,7 @@ class NavBar extends Component {
         return (
             <div className="navbar-container">
             <div className="nav-items">
-             <img alt="logo"/>
+             <div className="logo" >Current <p>Affairs</p></div>
              <ul>
                  <li>Entertainment</li>
                  <li>Politics</li>
