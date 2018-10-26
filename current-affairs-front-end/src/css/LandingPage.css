@@ -34,6 +34,7 @@
   font-size: 80px;
   width: 500px;
   margin: auto;
+  font-family: -webkit-body;
 }
 .landing-container .middle-content .middle-image {
   height: 400px;
@@ -69,4 +70,26 @@
   font-weight: 400;
   padding: 0 10px;
   border-radius: 5px;
+}
+.landing-container .footer {
+  display: flex;
+}
+.landing-container .footer .logo {
+  color: #3e2d4f;
+  margin: 60px 0 20px 32%;
+  border: 1px dotted #3e2d4f;
+  height: 66px;
+  width: 170px;
+  border-radius: 5px;
+  padding: 10px 0 0 46px;
+  font-size: 22px;
+  font-family: monospace;
+  font-style: oblique;
+  font-variant: small-caps;
+  font-stretch: ultra-expanded;
+  cursor: pointer;
+}
+.landing-container .footer span {
+  margin: 84px 0 0 1%;
+  font-weight: 600;
 }
