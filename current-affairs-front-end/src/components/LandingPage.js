@@ -26,6 +26,14 @@ class LandingPage extends Component {
             <div className="promo-title">Find the news that everyone is talking about</div>
             <img className="middle-image"alt="purple earth" src={earth} />
             </div>
+            <div className="bottom">
+            <input
+               autoComplete="off"
+               placeholder="Subscribe"                   
+               className="subscribe"
+                />
+                <button className="btn-subscribe-cta">Subscribe</button>
+            </div>
         </div>)
     }
 

@@ -18,7 +18,8 @@
             font-family: monospace;
             font-style: oblique;
             font-variant: small-caps;
-            font-stretch: ultra-expanded
+            font-stretch: ultra-expanded;
+            cursor: pointer;
         }
         display: flex;
         margin-left: 60px;
@@ -26,11 +27,17 @@
             display: flex;
             margin: 50px 70px;
             font-weight: 900;
-          
-         li {
-            margin: 50px;
-            font-weight: 400;
-            font-size: 20px;
+            
+            li {
+                margin: 50px;
+                font-weight: 400;
+                font-size: 20px;
+                cursor: pointer;
+            }:hover {
+                color: gray;
+                text-underline-position: below;
+                text-decoration: underline;
+                
             }
         }
 
@@ -43,6 +50,8 @@
             height: 40px;
             margin-top: 14px;
             cursor: pointer;
+            } :hover {
+                text-decoration: underline;
             }
             .sign-up {
                 border: 1px solid #52d67b;
@@ -50,9 +59,11 @@
                 color: #52d67b;
                 cursor: pointer;                
                 height: 40px;               
-                padding: 10px 44px;             
+                padding: 10px 44px;          
                 
-             }
+             }:hover {
+                text-decoration: underline;
+            }
         }
     }
     .center-search {
@@ -69,8 +80,7 @@
             font-size: 18px;
             font-weight: 400;
             padding: 0 10px;
-            border-radius: 5px 0 0 5px; 
-                      
+            border-radius: 5px 0 0 5px;                       
         }  
 
         .search-inputs-left input {
@@ -107,7 +117,7 @@
         line-height: 30px;
         outline: 0;
         box-sizing: inherit;
-        background-color: #fff;
+        //background-color: #fff;
         display: inline-block;
         font-size: 18px;
         font-weight: 400;
@@ -120,7 +130,7 @@
     border-radius: 3px;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
+    // display: inline-block;
     font-size: 18px;
     font-weight: 400;
     line-height: 18px;
