@@ -33,13 +33,14 @@ class LogIn extends React.Component {
             return (
                 <div>      
                   
-                  <Button onClick={this.handleClickOpen}>Open form dialog</Button>
-        <Dialog
+            <div className="login" onClick={this.handleClickOpen}>Login</div>
+         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
             >
           <DialogTitle id="form-dialog-title">Sign In</DialogTitle>
+          <div  className="login-wrap">
           <DialogContent>
             <DialogContentText>
             <div className="again">
@@ -53,6 +54,7 @@ class LogIn extends React.Component {
             </DialogContentText>
        
           </DialogContent>
+          </div>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
               Cancel

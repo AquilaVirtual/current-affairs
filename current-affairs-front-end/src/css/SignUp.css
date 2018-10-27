@@ -1,0 +1,9 @@
+.sign-up-wrap {
+  width: 500px;
+  height: 400px;
+}
+.sign-up-wrap .form-control {
+  width: 78%;
+  height: 50px;
+  margin-left: 10%;
+}

@@ -39,7 +39,6 @@
 }
 .navbar-container .nav-items ul :hover {
   color: gray;
-  text-underline-position: below;
   text-decoration: underline;
 }
 .navbar-container .nav-items .buttons-wrap {
@@ -48,13 +47,9 @@
 }
 .navbar-container .nav-items .buttons-wrap .login {
   text-align: center;
-  width: 120px;
-  height: 40px;
   margin-top: 14px;
+  margin-right: 40px;
   cursor: pointer;
-}
-.navbar-container .nav-items .buttons-wrap :hover {
-  text-decoration: underline;
 }
 .navbar-container .nav-items .buttons-wrap .sign-up {
   border: 1px solid #52d67b;
@@ -63,9 +58,6 @@
   cursor: pointer;
   height: 40px;
   padding: 10px 44px;
-}
-.navbar-container .nav-items .buttons-wrap :hover {
-  text-decoration: underline;
 }
 .navbar-container .center-search {
   margin-left: 29%;
