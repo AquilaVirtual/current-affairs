@@ -1,5 +1,14 @@
 import React from "react";
 
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
+import '../css/LogIn.css';
 class LogIn extends React.Component {
     
         constructor(props) {
@@ -8,37 +17,46 @@ class LogIn extends React.Component {
                 email: '',               
                 password: '',                           
                 error: false,
+                open: false,
                 errorMessage: ''
             };
-        }       
+        }  
+        handleClickOpen = () => {
+            this.setState({ open: true });
+          };
+        
+          handleClose = () => {
+            this.setState({ open: false });
+          };     
   
         render() {
             return (
                 <div>      
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Sign In
-                </button>
-
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    <input className="form-control" placeholder="Username" name='username' type="text" value={this.state.username} onChange={this.handleInputChange} />
-                    <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
+                  
+                  <Button onClick={this.handleClickOpen}>Open form dialog</Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+            >
+          <DialogTitle id="form-dialog-title">Sign In</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+            <input className="form-control" placeholder="Username" name='username' type="text" value={this.state.username} onChange={this.handleInputChange} />
+            <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
+            </DialogContentText>
+       
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={this.handleClose} color="primary">
+              Sign in
+            </Button>
+          </DialogActions>
+          </Dialog>
+                
                   </div>
                     )
                 }           

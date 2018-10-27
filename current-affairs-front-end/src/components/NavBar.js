@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/NavBar.css';
+import LogIn from './LogIn';
 class NavBar extends Component {
     constructor() {
         super();
@@ -18,7 +19,7 @@ class NavBar extends Component {
                  <li><a href="#">Economics</a></li>
                  <li><a href="#">Causes</a></li>
              </ul>
-             <div className="buttons-wrap">
+             <div className="buttons-wrap">        
                  <div className="login">Login</div>
                  <div className="sign-up">Sign up</div>
                  </div>

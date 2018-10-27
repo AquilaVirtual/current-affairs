@@ -14,6 +14,7 @@ class LandingPage extends Component {
         return (
             <div className="landing-container">
             <NavBar />
+            
             <div className="list-container">
             <img className="green-marker" alt="green marker" src={green} />
             <div className="check-list">Get exclusive access to the latest news</div>
