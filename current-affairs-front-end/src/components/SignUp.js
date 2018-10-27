@@ -8,8 +8,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import '../css/LogIn.css';
-class LogIn extends React.Component {
+import '../css/SignUp.css';
+class SignUp extends React.Component {
     
         constructor(props) {
             super(props);
@@ -39,17 +39,25 @@ class LogIn extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
             >
-          <DialogTitle id="form-dialog-title">Sign In</DialogTitle>
+          <DialogTitle id="form-dialog-title">Sign Up</DialogTitle>
           <DialogContent>
             <DialogContentText>
-            <div className="again">
             <div className="form-group">
-             <input className="form-control" placeholder="Username" name='username' type="text" value={this.state.username} onChange={this.handleInputChange} />
-            </div>
-            <div className="form-group">
-            <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
-            </div>
-            </div>
+                            <input className="form-control" placeholder="Full Name" name='name' type="text" value={this.state.name} onChange={this.handleInputChange} />
+                        </div>
+                        <div className="form-group">
+                            <input className="form-control" placeholder="Username" name='username' type="text" value={this.state.username} onChange={this.handleInputChange} />
+                        </div>
+                        <div className="form-group">                            
+                            <input className="form-control" placeholder="Email" name='email' type="email" value={this.state.email} onChange={this.handleInputChange} />
+                        </div>
+                        <div className="form-group">                            
+                            <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
+                        </div>
+                        <div className="form-group">                            
+                            <input className="form-control" placeholder="Confirm Password" name='confirmPassword' type="password" value={this.state.confirmPassword} onChange={this.handleInputChange} />
+                        </div>
+                        sdfsdfsdfsdfsd
             </DialogContentText>
        
           </DialogContent>
@@ -67,4 +75,4 @@ class LogIn extends React.Component {
                     )
                 }           
                }
-    export default LogIn; 
+    export default SignUp; 

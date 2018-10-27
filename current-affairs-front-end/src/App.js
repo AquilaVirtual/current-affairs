@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import User from './components/User';
 import LogIn from './components/LogIn';
+import SignUp from './components/SignUp';
 
 
 import './css/App.css';
@@ -16,7 +17,8 @@ class App extends Component {
 
       <Route path="/user" component={User} />
       <Route path="/login" component={LogIn} />
-       <Route exact path="/" component={LandingPage} />
+      <Route path="/signup" component={SignUp} />
+      <Route exact path="/" component={LandingPage} />
       </div>
     );
   }
