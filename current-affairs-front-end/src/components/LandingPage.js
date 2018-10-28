@@ -35,10 +35,10 @@ class LandingPage extends Component {
                placeholder="Your email"                   
                className="subscribe-email"
             />
-            <i class="fas fa-envelope"></i>
+            <i className="fas fa-envelope"></i>
             </div>
             <div className="country-bar">
-            <i class="fas fa-globe"></i>
+            <i className="fas fa-globe"></i>
             <input
                autoComplete="off"
                placeholder="Country"                   

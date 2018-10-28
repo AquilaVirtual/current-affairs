@@ -6,17 +6,14 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import '../css/SignUp.css';
-class SignUp extends React.Component {
+import '../css/Account.css';
+class Account extends React.Component {
     
         constructor(props) {
             super(props);
-            this.state = {
-                name: '',
-                username: '',                           
+            this.state = {                           
                 email: '',               
-                password: '',
-                confirmPassword: '',                           
+                password: '',                           
                 error: false,
                 open: false,
                 errorMessage: ''
@@ -29,10 +26,7 @@ class SignUp extends React.Component {
           handleClose = () => {
             this.setState({ open: false });
           };     
-          handleInputChange = event => {
-          event.preventDefault();
-          this.setState({ [event.target.name]: event.target.value });
-        };         
+                  
         render() {
             return (
         <div>                 
@@ -66,21 +60,16 @@ class SignUp extends React.Component {
           </DialogContent>
           </div>              
           <DialogActions>
-          <div className="buttons-wrap">
           <button className="sign-up-buttons" onClick={this.handleClose} color="primary">
               Cancel
             </button>
             <button className="sign-up-buttons" onClick={this.handleClose} color="primary">
               Sign Up
             </button>
-            </div>
           </DialogActions>
-          {/* <div className="signup-switch">
-           <div>Already have an account?<div className="switch-to-signin" onClick={this.anotherClose}><SignUp /></div></div>
-            </div>  */}
           </Dialog>  
          </div>
              )
             }           
         }
-    export default SignUp; 
+    export default Account; 

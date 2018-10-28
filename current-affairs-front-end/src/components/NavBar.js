@@ -33,10 +33,10 @@ class NavBar extends Component {
             placeholder="News title, Keyword"                   
             className="input-left"
             />
-            <i class="fa fa-search"></i>          
+            <i className="fa fa-search"></i>          
             </div>
             <div className="search-inputs-right">
-            <i class="fas fa-map-marker-alt"></i>
+            <i className="fas fa-map-marker-alt"></i>
               <input               
             autoComplete="off"
             placeholder="Country..."                   

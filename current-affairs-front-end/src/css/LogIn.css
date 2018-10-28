@@ -1,9 +1,30 @@
 .login-wrap {
   width: 500px;
-  height: 400px;
+  height: 190px;
 }
 .login-wrap .form-control {
   width: 78%;
   height: 50px;
   margin-left: 10%;
+}
+.buttons-wrap {
+  padding-right: 72px;
+}
+.buttons-wrap .signin-buttons {
+  width: 100px;
+  height: 50px;
+  border-right: 5px;
+  background-color: #52d67b;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+}
+.login-switch {
+  display: flex;
+  justify-content: space-around;
+  padding: 32px;
+}
+.login-switch .switch-to-signup {
+  color: #0085ff;
+  cursor: pointer;
 }

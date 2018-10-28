@@ -1,9 +1,30 @@
 .sign-up-wrap {
   width: 500px;
-  height: 400px;
+  height: 340px;
 }
 .sign-up-wrap .form-control {
   width: 78%;
   height: 50px;
   margin-left: 10%;
+}
+.buttons-wrap {
+  padding-right: 72px;
+}
+.buttons-wrap .sign-up-buttons {
+  width: 100px;
+  height: 50px;
+  border-right: 5px;
+  background-color: #52d67b;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+}
+.signup-switch {
+  display: flex;
+  justify-content: space-around;
+  padding: 32px;
+}
+.signup-switch .switch-to-signin {
+  color: #0085ff;
+  cursor: pointer;
 }
