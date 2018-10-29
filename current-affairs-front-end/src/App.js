@@ -19,9 +19,10 @@ class App extends Component {
       <Route path="/login" component={LogIn} />
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={LandingPage} />
+     
       </div>
     );
   }
-}
+} 
 
 export default App;
