@@ -9,16 +9,19 @@ class NavBar extends Component {
 
          } 
     }
+    alert = () => {
+        window.alert("This functionality is not available yet, please check back later.")
+    }
     render() {
         return (
             <div className="navbar-container">
             <div className="nav-items">
              <div className="logo" >Current <p>Affairs</p></div>
              <ul>
-                 <li><a href="#">Entertainment</a></li>
-                 <li><a href="#">Politics</a></li>
-                 <li><a href="#">Economics</a></li>
-                 <li><a href="#">Causes</a></li>
+                 <li  onClick={this.alert} ><a href="#">Entertainment</a></li>
+                 <li  onClick={this.alert}><a href="#">Politics</a></li>
+                 <li  onClick={this.alert}><a href="#">Economics</a></li>
+                 <li  onClick={this.alert}><a href="#">Causes</a></li>
              </ul>
              <div className="buttons-wrap">           
              <LogIn  />       
@@ -32,6 +35,7 @@ class NavBar extends Component {
             autoComplete="off"
             placeholder="News title, Keyword"                   
             className="input-left"
+            onClick={this.alert}
             />
             <i className="fa fa-search"></i>          
             </div>
@@ -41,9 +45,10 @@ class NavBar extends Component {
             autoComplete="off"
             placeholder="Country..."                   
             className="input-right"
+            onClick={this.alert}
             />
             </div>
-            <button className="btn-main-cta">Search Countries</button>
+            <button  onClick={this.alert} className="btn-main-cta">Search Countries</button>
             </div>
         </div>
         )

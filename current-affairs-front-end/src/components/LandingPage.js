@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import '../css/LandingPage.css';
 import NavBar from './NavBar'
+
 import green from '../imgs/green.jpg';
 import earth from "../imgs/earth.jpg";
+
 class LandingPage extends Component {
     constructor() {
         super();
@@ -10,11 +12,14 @@ class LandingPage extends Component {
 
          } 
     }
+    
+    alert = () => {
+        window.alert("This functionality is not available yet, please check back later.")
+    }
     render() {
         return (
             <div className="landing-container">
-            <NavBar />
-            
+            <NavBar />            
             <div className="list-container">
             <img className="green-marker" alt="green marker" src={green} />
             <div className="check-list">Get exclusive access to the latest news</div>
@@ -34,6 +39,8 @@ class LandingPage extends Component {
                autoComplete="off"
                placeholder="Your email"                   
                className="subscribe-email"
+               onClick={this.alert}
+
             />
             <i className="fas fa-envelope"></i>
             </div>
@@ -43,9 +50,10 @@ class LandingPage extends Component {
                autoComplete="off"
                placeholder="Country"                   
                className="subscribe-country"
+               onClick={this.alert}
             />
             </div>
-                <button className="btn-subscribe-cta">Subscribe</button>
+                <button className="btn-subscribe-cta"  onClick={this.alert}>Subscribe</button>
             </div>
             </div>
             <div className="footer">
