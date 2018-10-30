@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -7,6 +8,13 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import '../css/SignUp.css';
+
+let backend = 'http://localhost:5000/';
+let heroku = 'https://currentaffairs.herokuapp.com/';
+if (typeof(backend) !== 'string') {
+  backend = heroku;
+}
+
 class SignUp extends React.Component {
     
         constructor(props) {
@@ -32,7 +40,40 @@ class SignUp extends React.Component {
           handleInputChange = event => {
           event.preventDefault();
           this.setState({ [event.target.name]: event.target.value });
-        };         
+        }; 
+        
+        
+        createUser = event => {
+          event.preventDefault();
+          if(this.state.password !== this.state.confirmPassword) {
+              this.setState({
+                  errorMessage: "Passwords don't match!"                
+              })
+              return;
+          }
+          const user = {
+              name: this.state.name,
+              username: this.state.username,
+              password: this.state.password,
+              email: this.state.email,
+  
+          };
+          axios.post(`${backend}api/users/register`, user)
+          .then(response => {
+              console.log("SignUp",response)
+              localStorage.setItem('token', response.data.token)
+              this.props.history.push(`/login`)           
+              this.setState({
+                  error: false
+                  });
+              })
+              .catch(err => {              
+                  this.setState({
+                      error: true,
+                      errorMessage: err.response.data.error
+                  })
+              })
+      };
         render() {
             return (
         <div>                 
