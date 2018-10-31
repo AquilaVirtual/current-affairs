@@ -4,10 +4,17 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
-// import SignUp from './SignUp';
+import axios from 'axios';
 
 import '../css/LogIn.css';
+
+// import SignUp from './SignUp';
+let backend = 'http://localhost:5000/';
+let heroku = 'https://currentaffairs.herokuapp.com/';
+if (typeof(backend) !== 'string') {
+  backend = heroku;
+}
+
 class LogIn extends React.Component {
     
         constructor(props) {
@@ -19,7 +26,37 @@ class LogIn extends React.Component {
                 open: false,
                 errorMessage: ''
             };
-        }  
+          }  
+           
+            login = (event) => {
+              event.preventDefault();
+              const user = {
+                  username: this.state.username,
+                  password: this.state.password
+              };
+              axios.post(`${backend}api/users/login`, user)
+                  .then(response => {
+                      localStorage.setItem('token', response.data.token);
+                      localStorage.setItem('userId', response.data.userId);
+                      localStorage.setItem('name', response.data.name);
+                      localStorage.setItem('username', this.state.username);
+                      console.log("Fire", response)
+                      this.setState({
+                          error: false
+                      });
+                      setTimeout(() => {
+                          this.props.history.push('/');
+                      }, 200)
+                  })
+                  .catch(err => {
+                      console.log(err)
+                      this.setState({
+                          error: true,
+                          errorMessage: err.response.data.error
+                      })
+                  })
+          }
+
         handleClickOpen = () => {
             this.setState({ open: true });
           };

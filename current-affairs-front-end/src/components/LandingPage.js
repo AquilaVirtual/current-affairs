@@ -58,7 +58,7 @@ class LandingPage extends Component {
             </div>
             <div className="footer">
             <div className="logo" >Current <p>Affairs</p></div>
-            <span>Copy Right 2018</span>
+            <span>Copyright 2018</span>
             </div>
         </div>)
     }
