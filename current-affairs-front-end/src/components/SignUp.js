@@ -9,11 +9,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 import '../css/SignUp.css';
 
-let backend = 'http://localhost:5000/';
-let heroku = 'https://currentaffairs.herokuapp.com/';
-if (typeof(backend) !== 'string') {
-  backend = heroku;
-}
+
+ let backend = 'https://lamb-notes.herokuapp.com/';
+// let backend = 'http://localhost:5000/';
+// let heroku = 'https://currentaffairs.herokuapp.com/';
+// if (typeof(backend) !== 'string') {
+//   backend = heroku;
+// }
 
 class SignUp extends React.Component {
     

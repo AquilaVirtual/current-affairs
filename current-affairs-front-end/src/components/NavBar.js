@@ -23,10 +23,12 @@ class NavBar extends Component {
                  <li  onClick={this.alert}><a href="#">Economics</a></li>
                  <li  onClick={this.alert}><a href="#">Causes</a></li>
              </ul>
+             {localStorage.getItem('token') ? (null) : (
              <div className="buttons-wrap">           
              <LogIn  />       
              <SignUp />        
              </div>
+             )}
             </div>
             <div className="headline">Search. Learn. <span className="last-word">Know.</span></div>
             <div className="center-search">

@@ -8,19 +8,20 @@ import axios from 'axios';
 
 import '../css/LogIn.css';
 
+let backend = 'https://lamb-notes.herokuapp.com/';
 // import SignUp from './SignUp';
-let backend = 'http://localhost:5000/';
-let heroku = 'https://currentaffairs.herokuapp.com/';
-if (typeof(backend) !== 'string') {
-  backend = heroku;
-}
+// let backend = 'http://localhost:5000/';
+// let heroku = 'https://currentaffairs.herokuapp.com/';
+// if (typeof(backend) !== 'string') {
+//   backend = heroku;
+// }
 
 class LogIn extends React.Component {
     
         constructor(props) {
             super(props);
             this.state = {                           
-                email: '',               
+                username: '',               
                 password: '',                           
                 error: false,
                 open: false,
@@ -85,7 +86,7 @@ class LogIn extends React.Component {
           <DialogContent>
             <DialogContentText>            
             <div className="form-group">
-             <input className="form-control" placeholder="Email" name='email' type="text" value={this.state.email} onChange={this.handleInputChange} />
+             <input className="form-control" placeholder="Email" username="username" type="text" value={this.state.username} onChange={this.handleInputChange} />
             </div>
             <div className="form-group">
             <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
@@ -99,7 +100,7 @@ class LogIn extends React.Component {
             <button className="signin-buttons" onClick={this.handleClose} >
               Cancel
             </button>
-            <button className="signin-buttons" onClick={this.handleClose} >
+            <button className="signin-buttons" onClick={this.login} >
              Login
             </button>
             </div>
