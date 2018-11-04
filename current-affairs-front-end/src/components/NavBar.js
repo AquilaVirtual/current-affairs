@@ -31,8 +31,12 @@ class NavBar extends Component {
       logOut = () => {
           localStorage.removeItem('token');
           this.props.history.push('/');
-
       }
+
+      userAccount = () => {
+          this.props.history.push('/user');
+      }
+
     alert = () => {
         window.alert("This functionality is not available yet, please check back later.")
     }
@@ -64,7 +68,7 @@ class NavBar extends Component {
                    onClose={this.handleClose}
                  >
                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                   <MenuItem onClick={this.user}>My account</MenuItem>
                    <MenuItem onClick={this.logOut }>Logout</MenuItem>
                  </Menu>
                </div>     
