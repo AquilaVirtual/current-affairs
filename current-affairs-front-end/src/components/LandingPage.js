@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import '../css/LandingPage.css';
+import { withRouter } from 'react-router-dom';
+
 import NavBar from './NavBar'
 
 import green from '../imgs/green.jpg';
 import earth from "../imgs/earth.jpg";
+
+import '../css/LandingPage.css';
 
 class LandingPage extends Component {
     constructor() {
@@ -45,7 +48,7 @@ class LandingPage extends Component {
             <i className="fas fa-envelope"></i>
             </div>
             <div className="country-bar">
-            <i className="fas fa-globe"></i>
+            <i className="fas fa-map-marker-alt"></i>
             <input
                autoComplete="off"
                placeholder="Country"                   
@@ -57,7 +60,7 @@ class LandingPage extends Component {
             </div>
             </div>
             <div className="footer">
-            <div className="logo" >Current <p>Affairs</p></div>
+            <div className="logo" onClick={()=>{this.props.history.push('/')}}>Current <p>Affairs</p></div>
             <span>Copyright 2018</span>
             </div>
         </div>)
@@ -65,4 +68,4 @@ class LandingPage extends Component {
 
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);

@@ -1,9 +1,12 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+
 import axios from 'axios';
 
 import '../css/LogIn.css';
@@ -86,7 +89,7 @@ class LogIn extends React.Component {
           <DialogContent>
             <DialogContentText>            
             <div className="form-group">
-             <input className="form-control" placeholder="Email" username="username" type="text" value={this.state.username} onChange={this.handleInputChange} />
+             <input className="form-control" placeholder="Email" name="username" type="text" value={this.state.username} onChange={this.handleInputChange} />
             </div>
             <div className="form-group">
             <input className="form-control" placeholder="Password" name='password' type="password" value={this.state.password} onChange={this.handleInputChange} />
@@ -114,4 +117,4 @@ class LogIn extends React.Component {
                     )
                 }           
                }
-    export default LogIn; 
+    export default withRouter(LogIn); 

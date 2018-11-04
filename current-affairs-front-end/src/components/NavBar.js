@@ -1,18 +1,43 @@
 import React, { Component } from 'react';
-import '../css/NavBar.css';
+import { withRouter } from 'react-router-dom';
+
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+
 import LogIn from './LogIn';
 import SignUp from './SignUp';
+
+import hamburger from '../imgs/hamburger.png';
+import '../css/NavBar.css';
+
 class NavBar extends Component {
     constructor() {
         super();
         this.state = {
-
+            anchorEl: null,
          } 
-    }
+    }  
+       
+   
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+      };
+    
+      handleClose = () => {
+        this.setState({ anchorEl: null });
+      };
+
+      logOut = () => {
+          localStorage.removeItem('token');
+          this.props.history.push('/');
+
+      }
     alert = () => {
         window.alert("This functionality is not available yet, please check back later.")
     }
     render() {
+        const { anchorEl } = this.state;
         return (
             <div className="navbar-container">
             <div className="nav-items">
@@ -23,7 +48,28 @@ class NavBar extends Component {
                  <li  onClick={this.alert}><a href="#">Economics</a></li>
                  <li  onClick={this.alert}><a href="#">Causes</a></li>
              </ul>
-             {localStorage.getItem('token') ? (null) : (
+             {localStorage.getItem('token') ? (
+                 <div className="hamburger-menu">
+                 <Button
+                   aria-owns={anchorEl ? 'simple-menu' : undefined}
+                   aria-haspopup="true"
+                   onClick={this.handleClick}
+                 >
+                   <img className="hamburger"alt="hamburger" src={hamburger}/>                 
+                 </Button>
+                 <Menu
+                   id="simple-menu"
+                   anchorEl={anchorEl}
+                   open={Boolean(anchorEl)}
+                   onClose={this.handleClose}
+                 >
+                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                   <MenuItem onClick={this.logOut }>Logout</MenuItem>
+                 </Menu>
+               </div>     
+      
+     ) : (
              <div className="buttons-wrap">           
              <LogIn  />       
              <SignUp />        
@@ -58,4 +104,4 @@ class NavBar extends Component {
 
 }
 
-export default NavBar;
+export default withRouter(NavBar);

@@ -59,6 +59,10 @@
   height: 40px;
   padding: 10px 44px;
 }
+.navbar-container .nav-items .hamburger-menu {
+  margin-top: 82px;
+  margin-left: 10%;
+}
 .navbar-container .center-search {
   margin-left: 29%;
   display: flex;
