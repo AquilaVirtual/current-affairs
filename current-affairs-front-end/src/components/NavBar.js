@@ -66,9 +66,8 @@ class NavBar extends Component {
                    anchorEl={anchorEl}
                    open={Boolean(anchorEl)}
                    onClose={this.handleClose}
-                 >
-                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                   <MenuItem onClick={this.user}>My account</MenuItem>
+                 >                  
+                   <MenuItem onClick={this.userAccount}>My account</MenuItem>
                    <MenuItem onClick={this.logOut }>Logout</MenuItem>
                  </Menu>
                </div>     
