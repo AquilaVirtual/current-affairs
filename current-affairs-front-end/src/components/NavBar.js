@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Popper from '@material-ui/core/Popper';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Fade from '@material-ui/core/Fade';
+import Paper from '@material-ui/core/Paper';
+
+
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import LogIn from './LogIn';
 import SignUp from './SignUp';
+import Countries from './Countries';
 
 import hamburger from '../imgs/hamburger.png';
 import '../css/NavBar.css';
+
+
+const styles = theme => ({
+    typography: {
+      padding: theme.spacing.unit * 2,
+    },
+  });
 
 class NavBar extends Component {
     constructor() {
         super();
         this.state = {
-            anchorEl: null,
+            anchorEl: null,            
+            open: false,
          } 
     }  
-       
-   
+      
+
     handleClick = event => {
         this.setState({ anchorEl: event.currentTarget });
       };
@@ -41,16 +57,20 @@ class NavBar extends Component {
         window.alert("This functionality is not available yet, please check back later.")
     }
     render() {
+
         const { anchorEl } = this.state;
+     
+      
         return (
             <div className="navbar-container">
             <div className="nav-items">
-             <div className="logo" >Current <p>Affairs</p></div>
+             <div className="logo" >Current <p>Affairs</p></div>             
+     
              <ul>
-                 <li  onClick={this.alert} ><a href="#">Entertainment</a></li>
-                 <li  onClick={this.alert}><a href="#">Politics</a></li>
-                 <li  onClick={this.alert}><a href="#">Economics</a></li>
-                 <li  onClick={this.alert}><a href="#">Causes</a></li>
+            <li><a href="#"> <Countries value="Entertainment"/></a></li>
+            <li><a href="#"><Countries value="Politics"/></a></li>
+            <li><a href="#"><Countries value="Economics"/></a></li>
+            <li><a href="#"><Countries value="Causes"/></a></li>
              </ul>
              {localStorage.getItem('token') ? (
                  <div className="hamburger-menu">
@@ -107,4 +127,8 @@ class NavBar extends Component {
 
 }
 
-export default withRouter(NavBar);
+// Countries.propTypes = {
+//     classes: PropTypes.object.isRequired,
+//   };
+
+export default withRouter(NavBar)

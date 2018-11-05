@@ -7,6 +7,7 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 
 
+
 import './css/App.css';
 
 
@@ -14,7 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-
+     
+    
       <Route path="/user" component={User} />
       <Route path="/login" component={LogIn} />
       <Route path="/signup" component={SignUp} />
