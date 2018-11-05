@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Popper from '@material-ui/core/Popper';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Fade from '@material-ui/core/Fade';
-import Paper from '@material-ui/core/Paper';
+
 
 
 import Menu from '@material-ui/core/Menu';
@@ -19,12 +14,6 @@ import Countries from './Countries';
 import hamburger from '../imgs/hamburger.png';
 import '../css/NavBar.css';
 
-
-const styles = theme => ({
-    typography: {
-      padding: theme.spacing.unit * 2,
-    },
-  });
 
 class NavBar extends Component {
     constructor() {
@@ -67,10 +56,10 @@ class NavBar extends Component {
              <div className="logo" >Current <p>Affairs</p></div>             
      
              <ul>
-            <li><a href="#"> <Countries value="Entertainment"/></a></li>
-            <li><a href="#"><Countries value="Politics"/></a></li>
-            <li><a href="#"><Countries value="Economics"/></a></li>
-            <li><a href="#"><Countries value="Causes"/></a></li>
+            <li><Countries value="Entertainment"/></li>
+            <li><Countries value="Politics"/></li>
+            <li><Countries value="Economics"/></li>
+            <li><Countries value="Causes"/></li>
              </ul>
              {localStorage.getItem('token') ? (
                  <div className="hamburger-menu">
@@ -127,8 +116,6 @@ class NavBar extends Component {
 
 }
 
-// Countries.propTypes = {
-//     classes: PropTypes.object.isRequired,
-//   };
+
 
 export default withRouter(NavBar)

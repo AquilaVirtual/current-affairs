@@ -29,17 +29,14 @@
   font-weight: 900;
 }
 .navbar-container .nav-items ul li {
+  color: white;
   margin: 50px;
   font-weight: 400;
   font-size: 20px;
   cursor: pointer;
 }
-.navbar-container .nav-items ul li a {
-  color: white;
-}
 .navbar-container .nav-items ul :hover {
   color: gray;
-  text-decoration: underline;
 }
 .navbar-container .nav-items .buttons-wrap {
   display: flex;

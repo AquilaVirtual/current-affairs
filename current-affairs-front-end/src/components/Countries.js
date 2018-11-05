@@ -275,8 +275,8 @@ class Countries extends React.Component {
 </select>        
       </div>
       <div class="modal-footer">
-        <button type="button"  className="country-btn" data-dismiss="modal">Cancel</button>
-        <button onClick={this.alert} type="button" className="country-btn" data-dismiss="modal" >Search</button>
+        <button  className="country-btn" data-dismiss="modal">Cancel</button>
+        <button onClick={this.alert}  className="country-btn" data-dismiss="modal" >Search</button>
       </div>
     </div>
   </div>
