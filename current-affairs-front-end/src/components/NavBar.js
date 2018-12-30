@@ -1,121 +1,127 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
+import LogIn from "./LogIn";
+import SignUp from "./SignUp";
+import Countries from "./Countries";
 
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-
-import LogIn from './LogIn';
-import SignUp from './SignUp';
-import Countries from './Countries';
-
-import hamburger from '../imgs/hamburger.png';
-import '../css/NavBar.css';
-
+import hamburger from "../imgs/hamburger.png";
+import "../css/NavBar.css";
 
 class NavBar extends Component {
-    constructor() {
-        super();
-        this.state = {
-            anchorEl: null,            
-            open: false,
-         } 
-    }  
-      
+  constructor() {
+    super();
+    this.state = {
+      anchorEl: null,
+      open: false
+    };
+  }
 
-    handleClick = event => {
-        this.setState({ anchorEl: event.currentTarget });
-      };
-    
-      handleClose = () => {
-        this.setState({ anchorEl: null });
-      };
+  handleClick = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
 
-      logOut = () => {
-          localStorage.removeItem('token');
-          this.props.history.push('/');
-      }
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 
-      userAccount = () => {
-          this.props.history.push('/user');
-      }
+  logOut = () => {
+    localStorage.removeItem("token");
+    this.props.history.push("/");
+  };
 
-    alert = () => {
-        window.alert("This functionality is not available yet, please check back later.")
-    }
-    render() {
+  userAccount = () => {
+    this.props.history.push("/user");
+  };
 
-        const { anchorEl } = this.state;
-     
-      
-        return (
-            <div className="navbar-container">
-            <div className="nav-items">
-             <div className="logo" >Current <p>Affairs</p></div>             
-     
-             <ul>
-            <li><Countries value="Entertainment"/></li>
-            <li><Countries value="Politics"/></li>
-            <li><Countries value="Economics"/></li>
-            <li><Countries value="Causes"/></li>
-             </ul>
-             {localStorage.getItem('token') ? (
-                 <div className="hamburger-menu">
-                 <Button
-                   aria-owns={anchorEl ? 'simple-menu' : undefined}
-                   aria-haspopup="true"
-                   onClick={this.handleClick}
-                 >
-                   <img className="hamburger"alt="hamburger" src={hamburger}/>                 
-                 </Button>
-                 <Menu
-                   id="simple-menu"
-                   anchorEl={anchorEl}
-                   open={Boolean(anchorEl)}
-                   onClose={this.handleClose}
-                 >                  
-                   <MenuItem onClick={this.userAccount}>My account</MenuItem>
-                   <MenuItem onClick={this.logOut }>Logout</MenuItem>
-                 </Menu>
-               </div>     
-      
-     ) : (
-             <div className="buttons-wrap">           
-             <LogIn  />       
-             <SignUp />        
-             </div>
-             )}
+  alert = () => {
+    window.alert(
+      "This functionality is not available yet, please check back later."
+    );
+  };
+  render() {
+    const { anchorEl } = this.state;
+
+    return (
+      <div className="navbar-container">
+        <div className="nav-items">
+          <div className="logo">
+            Current <p>Affairs</p>
+          </div>
+
+          <ul>
+            <li>
+              <Countries value="Entertainment" />
+            </li>
+            <li>
+              <Countries value="Politics" />
+            </li>
+            <li>
+              <Countries value="Economics" />
+            </li>
+            <li>
+              <Countries value="Causes" />
+            </li>
+          </ul>
+          {localStorage.getItem("token") ? (
+            <div className="hamburger-menu">
+              <Button
+                aria-owns={anchorEl ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                onClick={this.handleClick}
+              >
+                <img className="hamburger" alt="hamburger" src={hamburger} />
+              </Button>
+              <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={this.handleClose}
+              >
+                <MenuItem onClick={this.userAccount}>My account</MenuItem>
+                <MenuItem onClick={this.logOut}>Logout</MenuItem>
+              </Menu>
             </div>
-            <div className="headline">Search. Learn. <span className="last-word">Know.</span></div>
-            <div className="center-search">
-            <div className="search-inputs-left">
-            <input  
-            autoComplete="off"
-            placeholder="News title, Keyword"                   
-            className="input-left"
-            onClick={this.alert}
-            />
-            <i className="fa fa-search"></i>          
+          ) : (
+            <div className="buttons-wrap">
+              <LogIn />
+              <SignUp />
             </div>
-            <div className="search-inputs-right">
-            <i className="fas fa-map-marker-alt"></i>
-              <input               
-            autoComplete="off"
-            placeholder="Country..."                   
-            className="input-right"
-            onClick={this.alert}
-            />
-            </div>
-            <button  onClick={this.alert} className="btn-main-cta">Search Countries</button>
-            </div>
+          )}
         </div>
-        )
-    }
-
+        <div className="headline">
+          Search. Learn. <span className="last-word">Know.</span>
+        </div>
+        <div className="center-search">
+          <div className="search-inputs-left">
+            <input
+              autoComplete="off"
+              placeholder="News title, Keyword"
+              className="input-left"
+              onClick={this.alert}
+            />
+            <i className="fa fa-search" />
+          </div>
+          <div className="search-inputs-right">
+            <i className="fas fa-map-marker-alt" />
+            <input
+              autoComplete="off"
+              placeholder="Country..."
+              className="input-right"
+              onClick={this.alert}
+            />
+          </div>
+          <button onClick={this.alert} className="btn-main-cta">
+            Search Countries
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
-
-
-export default withRouter(NavBar)
+export default withRouter(NavBar);
