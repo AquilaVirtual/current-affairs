@@ -84,7 +84,7 @@ class NavBar extends Component {
               >
                 <MenuItem onClick={this.userAccount}>My account</MenuItem>
                 <MenuItem onClick={this.logOut}>Logout</MenuItem>
-              </Menu>
+              </Menu>{`${localStorage.getItem("name").split(" ")[0]}`}
             </div>
           ) : (
             <div className="buttons-wrap">
