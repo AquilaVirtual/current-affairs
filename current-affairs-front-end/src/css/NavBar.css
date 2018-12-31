@@ -12,9 +12,9 @@
   margin: 60px 0 0 130px;
   border: 1px dotted white;
   height: 66px;
-  width: 170px;
   border-radius: 5px;
-  padding: 10px 0 0 46px;
+  text-align: center;
+  padding-top: 8px;
   font-size: 22px;
   font-family: monospace;
   font-style: oblique;
