@@ -2,13 +2,21 @@
   width: 100%;
   height: 80vh;
   color: white;
-  background-image: url('../imgs/globe2.png');
+  background-image: url("../imgs/globe2.png");
+  display: flex;
+  justify-content: center;
 }
-.search-container .center-search {
-  margin-left: 29%;
+.search-container .search-body {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  margin-top: 130px;
+}
+.search-container .search-body .center-search {
   display: flex;
 }
-.search-container .center-search .input-left {
+.search-container .search-body .center-search .input-left {
   border-right: 1px solid darkgray;
   height: 60px;
   line-height: 30px;
@@ -21,20 +29,20 @@
   padding: 0 10px;
   border-radius: 5px 0 0 5px;
 }
-.search-container .center-search .search-input-left input {
+.search-container .search-body .center-search .search-input-left input {
   padding-left: 40px;
 }
-.search-container .center-search .search-input-left {
+.search-container .search-body .center-search .search-input-left {
   position: relative;
 }
-.search-container .center-search .search-input-left i {
+.search-container .search-body .center-search .search-input-left i {
   left: 0;
   top: 14px;
   position: absolute;
   padding: 9px 14px;
   color: darkgray;
 }
-.search-container .center-search .input-right {
+.search-container .search-body .center-search .input-right {
   height: 60px;
   line-height: 30px;
   outline: 0;
@@ -45,20 +53,20 @@
   padding: 0 10px;
   border-radius: 0 5px 5px 0;
 }
-.search-container .center-search .search-input-right input {
+.search-container .search-body .center-search .search-input-right input {
   padding-left: 40px;
 }
-.search-container .center-search .search-input-right {
+.search-container .search-body .center-search .search-input-right {
   position: relative;
 }
-.search-container .center-search .search-input-right i {
+.search-container .search-body .center-search .search-input-right i {
   left: 0;
   top: 14px;
   position: absolute;
   padding: 9px 14px;
   color: darkgray;
 }
-.search-container .center-search .btn-main-cta {
+.search-container .search-body .center-search .btn-main-cta {
   background-color: #52d67b;
   border-radius: 3px;
   color: #fff;
@@ -69,14 +77,13 @@
   padding: 21px 16px;
   margin-left: 15px;
 }
-.search-container .headline {
-  margin-left: 30%;
+.search-container .search-body .headline {
   margin-bottom: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 4.2rem;
   font-weight: 150;
   line-height: 84px;
 }
-.search-container .headline .last-word {
+.search-container .search-body .headline .last-word {
   font-weight: 600;
 }

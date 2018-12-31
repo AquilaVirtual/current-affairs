@@ -1,93 +1,92 @@
-@import 'mixins.less';
+@import "mixins.less";
 .search-container {
-    width: 100%;
-    height: 80vh;
-    color: white;
-    background-image: url('../imgs/globe2.png');  
+  width: 100%;
+  height: 80vh;
+  color: white;
+  background-image: url("../imgs/globe2.png");
+  display: flex;
+  justify-content: center;
+  .search-body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    margin-top: 130px;
     .center-search {
-        margin-left: 29%;
-        display: flex;
-        .input-left { 
-            border-right: 1px solid darkgray;          
-            height: 60px;
-            line-height: 30px;
-            outline: 0;
-            box-sizing: inherit;
-            background-color: #fff;
-            display: inline-block;
-            font-size: 18px;
-            font-weight: 400;
-            padding: 0 10px;
-            border-radius: 5px 0 0 5px;                       
-        }  
+      display: flex;
+      .input-left {
+        border-right: 1px solid darkgray;
+        height: 60px;
+        line-height: 30px;
+        outline: 0;
+        box-sizing: inherit;
+        background-color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0 10px;
+        border-radius: 5px 0 0 5px;
+      }
+      .search-input-left input {
+        padding-left: 40px;
+      }
+      .search-input-left {
+        position: relative;
+      }
 
-        .search-input-left input {
-            padding-left: 40px;
-        }
-        .search-input-left {
-            position: relative;
-        }
-        
-        .search-input-left i {
-            left: 0;
-            top: 14px;
-            position: absolute;
-            padding: 9px 14px;
-            color: darkgray;
-        }
+      .search-input-left i {
+        left: 0;
+        top: 14px;
+        position: absolute;
+        padding: 9px 14px;
+        color: darkgray;
+      }
 
-        .input-right { 
-            height: 60px;
-            line-height: 30px;
-            outline: 0;
-            box-sizing: inherit;
-            //background-color: #fff;
-            display: inline-block;
-            font-size: 18px;
-            font-weight: 400;
-            padding: 0 10px;
-            border-radius: 0 5px 5px 0;             
-        }
-        
-        .search-input-right input {
-            padding-left: 40px;
-        }
-        .search-input-right {
-            position: relative;
-        }
-        
-        .search-input-right i {
-            left: 0;
-            top: 14px;
-            position: absolute;
-            padding: 9px 14px;
-            color: darkgray;
-        }
-    .btn-main-cta {
-    background-color: #52d67b;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    // display: inline-block;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 21px 16px;
-    margin-left: 15px;
+      .input-right {
+        height: 60px;
+        line-height: 30px;
+        outline: 0;
+        box-sizing: inherit;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0 10px;
+        border-radius: 0 5px 5px 0;
+      }
+      .search-input-right input {
+        padding-left: 40px;
+      }
+      .search-input-right {
+        position: relative;
+      }
+      .search-input-right i {
+        left: 0;
+        top: 14px;
+        position: absolute;
+        padding: 9px 14px;
+        color: darkgray;
+      }
+      .btn-main-cta {
+        background-color: #52d67b;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 18px;
+        padding: 21px 16px;
+        margin-left: 15px;
+      }
     }
-   }
-
-   .headline {
-    margin-left: 30%;
-    margin-bottom: 20px;
-    //font-size: 40px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 4.2rem;
-    font-weight: 150;
-    line-height: 84px;
-    // line-height: 8.4rem;
-    .last-word {     
-        font-weight: 600;      
+    .headline {
+      margin-bottom: 20px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 4.2rem;
+      font-weight: 150;
+      line-height: 84px;
+      .last-word {
+        font-weight: 600;
+      }
     }
-   }
+  }
 }
