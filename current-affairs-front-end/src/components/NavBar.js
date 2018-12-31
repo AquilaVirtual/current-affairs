@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 
+import axios from 'axios';
+
+import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -12,12 +14,15 @@ import Countries from "./Countries";
 import hamburger from "../imgs/hamburger.png";
 import "../css/NavBar.css";
 
+let key = process.env.REACT_APP_NEWSAPIKEY;
+
 class NavBar extends Component {
   constructor() {
     super();
     this.state = {
       anchorEl: null,
-      open: false
+      open: false,
+
     };
   }
 
@@ -43,7 +48,14 @@ class NavBar extends Component {
       "This functionality is not available yet, please check back later."
     );
   };
-  render() {
+
+  componentDidMount(){
+   axios.get(`https://newsapi.org/v2/top-headlines?country=ng&apiKey=${key}`)
+   .then(res=> {
+       console.log("News", res)
+})
+}
+render() {
     const { anchorEl } = this.state;
 
     return (
@@ -110,13 +122,13 @@ class NavBar extends Component {
             <i className="fas fa-map-marker-alt" />
             <input
               autoComplete="off"
-              placeholder="Country..."
+              placeholder="Country"
               className="input-right"
               onClick={this.alert}
             />
           </div>
           <button onClick={this.alert} className="btn-main-cta">
-            Search Countries
+            Search
           </button>
         </div>
       </div>
