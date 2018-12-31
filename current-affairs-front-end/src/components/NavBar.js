@@ -64,7 +64,6 @@ render() {
           <div className="logo">
             Current <p>Affairs</p>
           </div>
-
           <ul>
             <li>
               <Countries value="Entertainment" />
@@ -104,33 +103,7 @@ render() {
               <SignUp />
             </div>
           )}
-        </div>
-        <div className="headline">
-          Search. Learn. <span className="last-word">Know.</span>
-        </div>
-        <div className="center-search">
-          <div className="search-inputs-left">
-            <input
-              autoComplete="off"
-              placeholder="News title, Keyword"
-              className="input-left"
-              onClick={this.alert}
-            />
-            <i className="fa fa-search" />
-          </div>
-          <div className="search-inputs-right">
-            <i className="fas fa-map-marker-alt" />
-            <input
-              autoComplete="off"
-              placeholder="Country"
-              className="input-right"
-              onClick={this.alert}
-            />
-          </div>
-          <button onClick={this.alert} className="btn-main-cta">
-            Search
-          </button>
-        </div>
+        </div>        
       </div>
     );
   }

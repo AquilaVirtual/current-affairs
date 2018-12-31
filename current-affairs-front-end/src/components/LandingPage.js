@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 import NavBar from "./NavBar";
+import Search from "./Search";
 
 import green from "../imgs/green.jpg";
 import earth from "../imgs/earth.jpg";
@@ -23,6 +24,7 @@ class LandingPage extends Component {
     return (
       <div className="landing-container">
         <NavBar />
+        <Search />
         <div className="list-container">
           <img className="green-marker" alt="green marker" src={green} />
           <div className="check-list">
