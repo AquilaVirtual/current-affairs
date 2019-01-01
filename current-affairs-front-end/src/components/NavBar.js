@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import axios from 'axios';
-
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -14,15 +12,12 @@ import Countries from "./Countries";
 import hamburger from "../imgs/hamburger.png";
 import "../css/NavBar.css";
 
-let key = process.env.REACT_APP_NEWSAPIKEY;
-
 class NavBar extends Component {
   constructor() {
     super();
     this.state = {
       anchorEl: null,
-      open: false,
-
+      open: false
     };
   }
 
@@ -49,13 +44,7 @@ class NavBar extends Component {
     );
   };
 
-  componentDidMount(){
-   axios.get(`https://newsapi.org/v2/top-headlines?country=ng&apiKey=${key}`)
-   .then(res=> {
-       console.log("News", res)
-})
-}
-render() {
+  render() {
     const { anchorEl } = this.state;
 
     return (
@@ -95,7 +84,8 @@ render() {
               >
                 <MenuItem onClick={this.userAccount}>My account</MenuItem>
                 <MenuItem onClick={this.logOut}>Logout</MenuItem>
-              </Menu>{`${localStorage.getItem("name").split(" ")[0]}`}
+              </Menu>
+              {`${localStorage.getItem("name").split(" ")[0]}`}
             </div>
           ) : (
             <div className="buttons-wrap">
@@ -103,7 +93,7 @@ render() {
               <SignUp />
             </div>
           )}
-        </div>        
+        </div>
       </div>
     );
   }
