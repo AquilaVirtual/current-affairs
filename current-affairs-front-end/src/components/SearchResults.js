@@ -18,7 +18,7 @@ class SearchResults extends React.Component {
           null
       );
     return <div>
-        {/* <NavBar /> */}
+        <NavBar />
         {news}
         </div>;
   }
