@@ -345,7 +345,6 @@ class NavBar extends Component {
         if (country.name === count[0]) {
           return country.name;
         }
-        
       });
       if (rn === undefined) {
         alert("The country you entered may not be covered");
@@ -357,12 +356,12 @@ class NavBar extends Component {
           `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
         )
         .then(res => {
-            console.log("News", res.data);
+          console.log("News", res.data);
           //   console.log("State", this.state.category);
           this.setState({
             search: res.data
           });
-        //   this.props.history.push('/results');
+          this.props.history.push("/results");
         });
     } else {
       alert("Fields can't be empty");
@@ -374,7 +373,7 @@ class NavBar extends Component {
   };
   render() {
     return (
-       <div className="search-container">
+      <div className="search-container">
         <SearchResults search={this.state.search} />
         <div className="search-body">
           <div className="headline">

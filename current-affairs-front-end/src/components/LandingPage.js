@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import NavBar from "./NavBar";
 import Search from "./Search";
 
 import green from "../imgs/green.jpg";
@@ -23,7 +22,6 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-container">
-        <NavBar />
         <Search />
         <div className="list-container">
           <img className="green-marker" alt="green marker" src={green} />
