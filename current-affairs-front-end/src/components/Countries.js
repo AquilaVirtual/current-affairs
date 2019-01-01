@@ -23,30 +23,30 @@ class Countries extends React.Component {
         </div>
 
         <div
-          class="modal fade"
+          className="modal fade"
           id="exampleModalLong"
           tabindex="-1"
           role="dialog"
           aria-labelledby="exampleModalLongTitle"
           aria-hidden="true"
         >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
                 <h5
-                  class="modal-title"
+                  className="modal-title"
                   id="exampleModalLongTitle"
                 >{`Select a country to search for news`}</h5>
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <select>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
@@ -189,9 +189,7 @@ class Countries extends React.Component {
                   <option value="Kyrgyzstan">Kyrgyzstan</option>
                   <option value="Lao">Lao People's Democratic Republic</option>
                   <option value="Latvia">Latvia</option>
-                  <option value="Lebanon" selected>
-                    Lebanon
-                  </option>
+                  <option value="Lebanon" >Lebanon </option>
                   <option value="Lesotho">Lesotho</option>
                   <option value="Liberia">Liberia</option>
                   <option value="Libyan Arab Jamahiriya">
@@ -349,7 +347,7 @@ class Countries extends React.Component {
                   <option value="Zimbabwe">Zimbabwe</option>
                 </select>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button className="country-btn" data-dismiss="modal">
                   Cancel
                 </button>

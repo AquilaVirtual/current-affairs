@@ -14,6 +14,7 @@ class NavBar extends Component {
     this.state = {
       country: null,
       category: null,
+      search: null,
       countries: [
         { name: "Afghanistan", iso: "AF" },
         { name: "Åland Islands", iso: "AX" },
@@ -344,6 +345,7 @@ class NavBar extends Component {
         if (country.name === count[0]) {
           return country.name;
         }
+        
       });
       if (rn === undefined) {
         alert("The country you entered may not be covered");
@@ -355,8 +357,12 @@ class NavBar extends Component {
           `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
         )
         .then(res => {
-          console.log("News", res.data);
-          console.log("State", this.state.category);
+            console.log("News", res.data);
+          //   console.log("State", this.state.category);
+          this.setState({
+            search: res.data
+          });
+        //   this.props.history.push('/results');
         });
     } else {
       alert("Fields can't be empty");
@@ -368,8 +374,8 @@ class NavBar extends Component {
   };
   render() {
     return (
-      <div className="search-container">
-        <SearchResults />
+       <div className="search-container">
+        <SearchResults search={this.state.search} />
         <div className="search-body">
           <div className="headline">
             Search. Learn. <span className="last-word">Know.</span>
