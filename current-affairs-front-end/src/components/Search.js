@@ -348,7 +348,7 @@ class NavBar extends Component {
         }
       });
 
-      console.log("Getting some", targetCountry)
+      console.log("Getting some",targetCountry)
       //checking if our returned value is an empty array or undefined
       // if (targetCountry !== undefined && targetCountry.length !== 0) {
       //   let countryCode = targetCountry[0]["iso"];
