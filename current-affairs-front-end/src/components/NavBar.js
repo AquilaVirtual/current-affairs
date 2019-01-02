@@ -43,14 +43,16 @@ class NavBar extends Component {
       "This functionality is not available yet, please check back later."
     );
   };
-
+  redirectToHome = () => {
+     this.props.history.push('/');
+ }
   render() {
     const { anchorEl } = this.state;
 
     return (
       <div className="navbar-container">
         <div className="nav-items">
-          <div className="logo">
+          <div className="logo" onClick={this.redirectToHome}>
             Current <p>Affairs</p>
           </div>
           <ul>

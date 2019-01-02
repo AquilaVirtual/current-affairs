@@ -339,35 +339,40 @@ class NavBar extends Component {
   }
 
   handleSearch = () => {
-    let count = this.state.country;
-    if (count !== null) {
-      let rn = this.state.countries.filter(country => {
-        if (country.name === count[0]) {
+    let countryName = this.state.country;
+    //checking if user entered a text or not
+    if (countryName !== null) {
+      let targetCountry = this.state.countries.filter(country => {
+        if (country.name.toLowerCase() === countryName[0].toLowerCase().trim()) {
           return country.name;
         }
       });
-      if (rn === undefined) {
-        alert("The country you entered may not be covered");
-        return;
-      }
-      let countryCode = rn[0]["iso"];
-      axios
-        .get(
-          `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
-        )
-        .then(res => {
-          console.log("News", res.data);
-          //   console.log("State", this.state.category);
-          this.setState({
-            search: res.data
+      //checking if our returned value is an empty array or undefined
+      if (targetCountry !== undefined && targetCountry.length !== 0) {
+        let countryCode = targetCountry[0]["iso"];
+        axios
+          .get(
+            `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
+          )
+          .then(res => {
+            console.log("News", res.data);
+            this.setState({
+              search: res.data
+            });
+            this.props.history.push("/results");
+          })
+          .catch(err => {
+            console.log(err);
           });
-          this.props.history.push("/results");
-        });
+      } else {
+        //a placeholer for modal
+        alert("There is no country by that name.");
+      }
     } else {
-      alert("Fields can't be empty");
+      //a placeholer for modal
+      alert("Please enter a country to search for.");
     }
   };
-
   handleInputChange = e => {
     this.setState({ [e.target.name]: [e.target.value] });
   };
