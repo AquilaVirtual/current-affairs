@@ -347,27 +347,29 @@ class NavBar extends Component {
           return country.name;
         }
       });
+
+      console.log("Getting some", targetCountry)
       //checking if our returned value is an empty array or undefined
-      if (targetCountry !== undefined && targetCountry.length !== 0) {
-        let countryCode = targetCountry[0]["iso"];
-        axios
-          .get(
-            `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
-          )
-          .then(res => {
-            console.log("News", res.data);
-            this.setState({
-              search: res.data
-            });
-            this.props.history.push("/results");
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      } else {
-        //a placeholer for modal
-        alert("There is no country by that name.");
-      }
+      // if (targetCountry !== undefined && targetCountry.length !== 0) {
+      //   let countryCode = targetCountry[0]["iso"];
+      //   axios
+      //     .get(
+      //       `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
+      //     )
+      //     .then(res => {
+      //       console.log("News", res.data);
+      //       this.setState({
+      //         search: res.data
+      //       });
+      //       this.props.history.push("/results");
+      //     })
+      //     .catch(err => {
+      //       console.log(err);
+      //     });
+      // } else {
+      //   //a placeholer for modal
+      //   alert("There is no country by that name.");
+      // }
     } else {
       //a placeholer for modal
       alert("Please enter a country to search for.");
