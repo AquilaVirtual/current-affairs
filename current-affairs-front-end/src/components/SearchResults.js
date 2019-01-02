@@ -4,14 +4,11 @@ class SearchResults extends React.Component {
   render() {
     console.log("I'm lost", this.props.search);
     let news = this.props.search ? (
-      <div className="container">
-        <div className="post">
-          <div className="title" />
-          <div className="content" />
-        </div>
-      </div>
+  <div>Fuck this</div>
     ) : null;
-    return <div >{news}</div>;
+    return (
+     <div className="main-container">{news}</div>
+  )
   }
 }
 export default SearchResults;

@@ -1,0 +1,10 @@
+.contain {
+  background: grey;
+  height: 400px;
+  width: 100%;
+  color: black;
+}
+.contain .post {
+  color: black;
+  font-size: 40px;
+}
