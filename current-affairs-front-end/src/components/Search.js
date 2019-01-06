@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 
 import axios from "axios";
 
@@ -8,7 +8,7 @@ import "../css/Search.css";
 
 let key = process.env.REACT_APP_NEWSAPIKEY;
 
-class NavBar extends Component {
+class Search extends Component {
   constructor() {
     super();
     this.state = {
@@ -338,7 +338,9 @@ class NavBar extends Component {
     };
   }
 
-  handleSearch = () => {
+  
+    handleSearch = (event) => {   
+      event.preventDefault(); 
     let countryName = this.state.country;
     //checking if user entered a text or not
     if (countryName !== null) {
@@ -352,34 +354,40 @@ class NavBar extends Component {
         let countryCode = targetCountry[0]["iso"];
         axios
           .get(
-            `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${key}`
+            `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=politics&apiKey=${key}`            
           )
           .then(res => {
             console.log("News", res.data.articles);
             this.setState({
               search: res.data.articles
-            });
-            this.props.history.push("/results");
+            });       
+          })
+          .then(()=> {
+            // setTimeout(()=> {
+            //   this.props.history.push('/results');
+            // }, 300)
           })
           .catch(err => {
             console.log(err);
           });
+        } else {
+          //a placeholer for modal
+          alert("There is no country by that name.");
+        }
       } else {
         //a placeholer for modal
-        alert("There is no country by that name.");
+        alert("Please enter a country to search for.");
       }
-    } else {
-      //a placeholer for modal
-      alert("Please enter a country to search for.");
-    }
-  };
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: [e.target.value] });
-  };
-  render() {
-    return (
+    };
+    
+    handleInputChange = e => {
+      this.setState({ [e.target.name]: [e.target.value] });
+    };
+    render() {
+      console.log("Outside here", this.state.search);
+      return (
       <div className="search-container">
-        <SearchResults search={this.state.search} />
+        {/* <SearchResults search={this.state.search} /> */}
         <div className="search-body">
           <div className="headline">
             Search. Learn. <span className="last-word">Know.</span>
@@ -410,9 +418,9 @@ class NavBar extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            <button onClick={this.handleSearch} className="btn-main-cta">
+           <NavLink to="/results"> <button onClick={this.handleSearch} className="btn-main-cta">
               Search
-            </button>
+            </button></NavLink>
           </div>
         </div>
       </div>
@@ -420,4 +428,4 @@ class NavBar extends Component {
   }
 }
 
-export default withRouter(NavBar);
+export default withRouter(Search);

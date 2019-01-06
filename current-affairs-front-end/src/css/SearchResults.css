@@ -1,10 +1,9 @@
-.contain {
-  background: grey;
+.main-container {
   height: 400px;
   width: 100%;
   color: black;
 }
-.contain .post {
+.post {
   color: black;
   font-size: 40px;
 }
