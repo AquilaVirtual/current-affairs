@@ -14,7 +14,7 @@ class Search extends Component {
     this.state = {
       country: null,
       category: null,
-      search: null,
+      search: [],
       countries: [
         { name: "Afghanistan", iso: "AF" },
         { name: "Åland Islands", iso: "AX" },
@@ -352,12 +352,14 @@ class Search extends Component {
       //checking if our returned value is an empty array or undefined
       if (targetCountry !== undefined && targetCountry.length !== 0) {
         let countryCode = targetCountry[0]["iso"];
+         let category = this.state.category;
         axios
           .get(
-            `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=politics&apiKey=${key}`            
+            `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=${category}&apiKey=${key}`         
           )
           .then(res => {
             console.log("News", res.data.articles);
+            console.log("API KEY", key);
             this.setState({
               search: res.data.articles
             });       
@@ -394,14 +396,13 @@ class Search extends Component {
           </div>
           <div className="center-search">
             <div className="search-input-left">
-              <input
-                disabled
+              <input               
                 autoComplete="off"
                 placeholder="News title, Keyword"
                 className="input-left"
                 type="text"
-                name="newsTitle"
-                value={this.state.newsTitle}
+                name="category"
+                value={this.state.category}
                 onChange={this.handleInputChange}
               />
               <i className="fa fa-search" />

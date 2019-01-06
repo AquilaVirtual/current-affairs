@@ -63,10 +63,10 @@ class NavBar extends Component {
               <Countries value="Politics" />
             </li>
             <li>
-              <Countries value="Economics" />
+              <Countries value="Technology" />
             </li>
             <li>
-              <Countries value="Causes" />
+              <Countries value="Science" />
             </li>
           </ul>
           {localStorage.getItem("token") ? (
