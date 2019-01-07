@@ -17,18 +17,18 @@ class SearchResults extends React.Component {
   render() {
     console.log("I'm lost in SeachResults", this.props.search);
     console.log("State SeachResults", this.state.results);
-    let news = this.props.search ? (
-      <div className="container">
-       { this.props.search.map((article) => {
-         return (
-         <NewsCard article={article}/>
-         )
-       })}
-       </div>
-    ) : (
-      <div className="post">Loading results...</div>
-    );
-    return <div className="main-container">{news}</div>;
+    // let news = this.props.search ? (
+    //   <div className="container">
+    //    { this.props.search.map((article) => {
+    //      return (
+    //      <NewsCard article={article}/>
+    //      )
+    //    })}
+    //    </div>
+    // ) : (
+    //   <div className="post">Loading results...</div>
+    // );
+    return <div className="main-container"></div>;
   }
 }
 export default SearchResults;
