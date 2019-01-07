@@ -387,7 +387,7 @@ class Search extends Component {
             <div className="search-input-left">
               <input
                 autoComplete="off"
-                placeholder="News title, Keyword"
+                placeholder="News category, Keyword"
                 className="input-left"
                 type="text"
                 name="category"

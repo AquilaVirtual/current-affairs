@@ -43,7 +43,7 @@ class LogIn extends React.Component {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("name", response.data.name);
-        localStorage.setItem("username", this.state.username);     
+        localStorage.setItem("username", this.state.username);
         this.setState({
           error: false
         });

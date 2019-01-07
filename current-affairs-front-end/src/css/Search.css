@@ -11,7 +11,7 @@
   flex-direction: column;
   position: absolute;
   justify-content: center;
-  margin-top: 183px;
+  top: 30%;
 }
 .search-container .search-body .center-search {
   display: flex;

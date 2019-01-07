@@ -4,11 +4,8 @@
   width: 100%;
   color: black;
 }
-.post {
-  color: black;
-  font-size: 40px;
-}
-.data {
-  margin-top: 243px;
+.container {
+  margin-top: 207px;
   position: absolute;
+  left: 16%;
 }

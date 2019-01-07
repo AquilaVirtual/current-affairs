@@ -12,7 +12,7 @@ class Countries extends React.Component {
 
   alert = () => {
     window.alert(
-      "This functionality is not available yet, please check back later."
+      "This functionality is not available yet, please use search bar."
     );
   };
   render() {
