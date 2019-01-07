@@ -1,5 +1,7 @@
 import React from "react";
 import "../css/SearchResults.css";
+
+import NewsCard from "./NewsCard";
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
@@ -16,10 +18,10 @@ class SearchResults extends React.Component {
     console.log("I'm lost in SeachResults", this.props.search);
     console.log("State SeachResults", this.state.results);
     let news = this.props.search ? (
-      <div className="container data">
+      <div className="container">
        { this.props.search.map((article) => {
          return (
-         <div>{<img alt="" src={article.urlToImage}/>}</div>
+         <div></div>
          )
        })}
        </div>
