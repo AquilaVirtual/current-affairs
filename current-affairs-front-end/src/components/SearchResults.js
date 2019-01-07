@@ -21,7 +21,7 @@ class SearchResults extends React.Component {
       <div className="container">
        { this.props.search.map((article) => {
          return (
-         <div></div>
+         <NewsCard article={article}/>
          )
        })}
        </div>
