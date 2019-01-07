@@ -44,8 +44,8 @@ class NavBar extends Component {
     );
   };
   redirectToHome = () => {
-     this.props.history.push('/');
- }
+    this.props.history.push("/");
+  };
   render() {
     const { anchorEl } = this.state;
 

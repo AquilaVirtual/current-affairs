@@ -6,14 +6,12 @@ import axios from "axios";
 import SearchResults from "./SearchResults";
 import "../css/Search.css";
 
-let key = process.env.REACT_APP_NEWSAPIKEY;
-
 class Search extends Component {
   constructor() {
     super();
     this.state = {
       country: null,
-      category: null,
+      category: "",
       search: [],
       countries: [
         { name: "Afghanistan", iso: "AF" },
@@ -338,65 +336,56 @@ class Search extends Component {
     };
   }
 
-  
-    handleSearch = (event) => {   
-      event.preventDefault(); 
+  handleSearch = () => {
+    // event.preventDefault();
     let countryName = this.state.country;
     //checking if user entered a text or not
     if (countryName !== null) {
       let targetCountry = this.state.countries.filter(country => {
-        if (country.name.toLowerCase() === countryName[0].toLowerCase().trim()) {
+        if (
+          country.name.toLowerCase() === countryName[0].toLowerCase().trim()
+        ) {
           return country.name;
         }
       });
       //checking if our returned value is an empty array or undefined
       if (targetCountry !== undefined && targetCountry.length !== 0) {
         let countryCode = targetCountry[0]["iso"];
-         let category = this.state.category;
-        axios
-          .get(
-            `https://newsapi.org/v2/top-headlines?country=${countryCode}&category=${category}&apiKey=${key}`         
-          )
-          .then(res => {
-            console.log("News", res.data.articles);
-            console.log("API KEY", key);
-            this.setState({
-              search: res.data.articles
-            });       
-          })
-          .then(()=> {
-            // setTimeout(()=> {
-            //   this.props.history.push('/results');
-            // }, 300)
-          })
-          .catch(err => {
-            console.log(err);
-          });
-        } else {
-          //a placeholer for modal
-          alert("There is no country by that name.");
-        }
+        let category = this.state.category;
+        let obj = {
+          countryCode: countryCode,
+          category: category
+        };
+        this.props.search(obj);
+
+        this.setState({
+          country: "",
+          category: ""
+        });
       } else {
         //a placeholer for modal
-        alert("Please enter a country to search for.");
+        alert("There is no country by that name.");
       }
-    };
-    
-    handleInputChange = e => {
-      this.setState({ [e.target.name]: [e.target.value] });
-    };
-    render() {
-      console.log("Outside here", this.state.search);
-      return (
+    } else {
+      //a placeholer for modal
+      alert("Please enter a country to search for.");
+    }
+  };
+
+  handleInputChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: [e.target.value] });
+  };
+  render() {
+    return (
       <div className="search-container">
-        {/* <SearchResults search={this.state.search} /> */}
         <div className="search-body">
           <div className="headline">
             Search. Learn. <span className="last-word">Know.</span>
           </div>
           <div className="center-search">
             <div className="search-input-left">
-              <input               
+              <input
                 autoComplete="off"
                 placeholder="News title, Keyword"
                 className="input-left"
@@ -419,9 +408,9 @@ class Search extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-           <NavLink to="/results"> <button onClick={this.handleSearch} className="btn-main-cta">
+            <button onClick={this.handleSearch} className="btn-main-cta">
               Search
-            </button></NavLink>
+            </button>
           </div>
         </div>
       </div>

@@ -22,7 +22,6 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-container">
-        <Search />
         <div className="list-container">
           <img className="green-marker" alt="green marker" src={green} />
           <div className="check-list">
