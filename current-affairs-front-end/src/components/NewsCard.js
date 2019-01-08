@@ -15,10 +15,10 @@ const NewsCard = props => {
   let url = props.article.url;
   return (
     <div className="data">
-      <Card>
+      <Card    style={{  marginTop: "14px"}}>
         <CardBody>
           <CardTitle style={{ fontSize: "30px", color: "purple" }}>
-            <a href={url} style={{ textDecoration: "none" }}>{props.article.title}</a>
+            <a href={url} target="blank"style={{ textDecoration: "none" }}>{props.article.title}</a>
           </CardTitle>
           <CardText style={{ margin: "14px 0" }}>
             {props.article.content}
