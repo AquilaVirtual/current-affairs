@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import Search from "./Search";
-
 import green from "../imgs/green.jpg";
 import earth from "../imgs/earth.jpg";
 

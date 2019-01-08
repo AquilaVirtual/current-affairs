@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { withRouter, NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-import axios from "axios";
-
-import SearchResults from "./SearchResults";
 import "../css/Search.css";
 
 class Search extends Component {
@@ -347,6 +344,7 @@ class Search extends Component {
         ) {
           return country.name;
         }
+        return null;
       });
       //checking if our returned value is an empty array or undefined
       if (targetCountry !== undefined && targetCountry.length !== 0) {
