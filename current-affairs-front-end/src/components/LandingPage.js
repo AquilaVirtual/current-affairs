@@ -41,8 +41,7 @@ class LandingPage extends Component {
         <div className="bottom">
           <div className="bottom-inputs">
             <div className="email-bar">
-              <input
-                autoComplete="off"
+              <input               
                 placeholder="Your email"
                 className="subscribe-email"
                 onClick={this.alert}
@@ -51,8 +50,7 @@ class LandingPage extends Component {
             </div>
             <div className="country-bar">
               <i className="fas fa-map-marker-alt" />
-              <input
-                autoComplete="off"
+              <input             
                 placeholder="Country"
                 className="subscribe-country"
                 onClick={this.alert}
@@ -72,7 +70,7 @@ class LandingPage extends Component {
           >
             Current <p>Affairs</p>
           </div>
-          <span>Copyright 2018</span>
+          <span>Copyright 2019</span>
         </div>
       </div>
     );
