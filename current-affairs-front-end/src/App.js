@@ -19,38 +19,34 @@ class App extends Component {
       search: [],
       category: ""
     };
-  }
-
-  // componentDidMount = () => {
-  //   this.search();
-  // }
-
-  search = searchObject => {
-    axios
-      .get(
-        `https://newsapi.org/v2/top-headlines?country=${
-          searchObject.countryCode
-        }&category=${searchObject.category}&apiKey=${key}`
-      )
-      .then(res => {
-        console.log("News", res.data);
-        this.setState({
-          search: res.data.articles
+    this.search = this.search.bind(this);
+  } 
+    search = searchObject => {
+      axios
+        .get(
+          `https://newsapi.org/v2/top-headlines?country=${
+            searchObject.countryCode
+          }&category=${searchObject.category}&apiKey=${key}`
+        )
+        .then(res => {
+          console.log("News", res.data);
+          this.setState({
+            search: res.data.articles
+          });
+        })
+        .then(() => {
+          this.props.history.push("/results");
+        })
+        .catch(err => {
+          console.log(err);
         });
-      })
-      .then(() => {
-        this.props.history.push("/results");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+    };
+ 
 
   render() {
     return (
       <div className="app-container">
-        <NavBar />
-        {/* <Search search={this.search} /> */}
+        <NavBar />      
         <Route
           exact
           path="/"

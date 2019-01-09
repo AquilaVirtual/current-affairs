@@ -21,6 +21,25 @@ class NavBar extends Component {
     };
   }
 
+
+ componentDidMount() {
+window.onscroll = function() {myFunction()};
+
+// Get the navbar-container
+let navbar = document.getElementById("navbar-container");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+ }
+
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -50,7 +69,7 @@ class NavBar extends Component {
     const { anchorEl } = this.state;
 
     return (
-      <div className="navbar-container">
+      <div id="navbar-container">
         <div className="nav-items">
           <div className="logo" onClick={this.redirectToHome}>
             Current <p>Affairs</p>

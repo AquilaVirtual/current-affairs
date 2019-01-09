@@ -1,13 +1,13 @@
-.navbar-container {
+#navbar-container {
   width: 100%;
   color: white;
   position: absolute;
 }
-.navbar-container .nav-items {
+#navbar-container .nav-items {
   display: flex;
   margin-left: 60px;
 }
-.navbar-container .nav-items .logo {
+#navbar-container .nav-items .logo {
   color: white;
   margin: 60px 0 0 130px;
   border: 1px dotted white;
@@ -22,32 +22,32 @@
   font-stretch: ultra-expanded;
   cursor: pointer;
 }
-.navbar-container .nav-items ul {
+#navbar-container .nav-items ul {
   display: flex;
   margin: 50px 70px;
   font-weight: 900;
 }
-.navbar-container .nav-items ul li {
+#navbar-container .nav-items ul li {
   color: white;
   margin: 50px;
   font-weight: 400;
   font-size: 20px;
   cursor: pointer;
 }
-.navbar-container .nav-items ul :hover {
+#navbar-container .nav-items ul :hover {
   color: gray;
 }
-.navbar-container .nav-items .buttons-wrap {
+#navbar-container .nav-items .buttons-wrap {
   display: flex;
   margin: 70px 0 0 10%;
 }
-.navbar-container .nav-items .buttons-wrap .login {
+#navbar-container .nav-items .buttons-wrap .login {
   text-align: center;
   margin-top: 14px;
   margin-right: 40px;
   cursor: pointer;
 }
-.navbar-container .nav-items .buttons-wrap .sign-up {
+#navbar-container .nav-items .buttons-wrap .sign-up {
   border: 1px solid #52d67b;
   border-radius: 3px;
   color: #52d67b;
@@ -56,7 +56,14 @@
   padding: 10px 44px;
   width: 147px;
 }
-.navbar-container .nav-items .hamburger-menu {
+#navbar-container .nav-items .hamburger-menu {
   margin-top: 82px;
   margin-left: 10%;
+}
+.sticky {
+  color: white;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
