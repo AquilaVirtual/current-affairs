@@ -18,10 +18,10 @@ class App extends Component {
     this.state = {
       search: [],
       category: ""
-    };
-    this.search = this.search.bind(this);
-  } 
-    search = searchObject => {
+    };   
+  }
+  componentWillMount(){
+    this.search = searchObject => {
       axios
         .get(
           `https://newsapi.org/v2/top-headlines?country=${
@@ -42,7 +42,7 @@ class App extends Component {
         });
     };
  
-
+  }
   render() {
     return (
       <div className="app-container">
