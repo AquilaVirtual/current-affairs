@@ -7,8 +7,8 @@ class SearchResults extends React.Component {
     console.log("I'm lost in SeachResults", this.props.search);
     let news = this.props.search ? (
       <div className="container">
-        {this.props.search.map(article => {
-          return <NewsCard article={article} />;
+        {this.props.search.map((article, i) => {
+          return <NewsCard article={article} key={i} />;
         })}
       </div>
     ) : (

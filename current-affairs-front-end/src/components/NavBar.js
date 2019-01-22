@@ -21,7 +21,6 @@ class NavBar extends Component {
     };
   }
 
-
  componentDidMount() {
 window.onscroll = function() {myFunction()};
 

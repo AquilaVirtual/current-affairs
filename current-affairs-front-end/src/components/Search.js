@@ -7,7 +7,7 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      country: null,
+      country: "",
       category: "",
       search: [],
       countries: [

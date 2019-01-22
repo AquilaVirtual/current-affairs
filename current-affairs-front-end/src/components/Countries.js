@@ -9,11 +9,21 @@ class Countries extends React.Component {
       value: ""
     };
   }
-
   alert = () => {
-    window.alert(
-      "This functionality is not available yet, please use search bar."
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+        document.querySelector(
+          'select[name="country"]'
+        ).onchange = changeEventHandler;
+      },
+      false
     );
+    function changeEventHandler(event) {
+      // You can use “this” to refer to the selected element.
+      if (!event.target.value) alert("Please Select One");
+      else alert("You selected" + event.target.value + ".");
+    }
   };
   render() {
     return (
@@ -21,11 +31,10 @@ class Countries extends React.Component {
         <div data-toggle="modal" data-target="#exampleModalLong">
           {this.props.value}
         </div>
-
         <div
           className="modal fade"
           id="exampleModalLong"
-          tabindex="-1"
+          tabIndex="-1"
           role="dialog"
           aria-labelledby="exampleModalLongTitle"
           aria-hidden="true"
@@ -47,7 +56,7 @@ class Countries extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <select>
+                <select id="countries" name="country">
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -189,7 +198,7 @@ class Countries extends React.Component {
                   <option value="Kyrgyzstan">Kyrgyzstan</option>
                   <option value="Lao">Lao People's Democratic Republic</option>
                   <option value="Latvia">Latvia</option>
-                  <option value="Lebanon" >Lebanon </option>
+                  <option value="Lebanon">Lebanon </option>
                   <option value="Lesotho">Lesotho</option>
                   <option value="Liberia">Liberia</option>
                   <option value="Libyan Arab Jamahiriya">

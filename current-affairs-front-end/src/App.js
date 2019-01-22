@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 
 import "./css/App.css";
-let key = process.env.REACT_APP_NEWSAPIKEY;
+;
 class App extends Component {
   constructor() {
     super();
@@ -26,7 +26,7 @@ class App extends Component {
         .get(
           `https://newsapi.org/v2/top-headlines?country=${
             searchObject.countryCode
-          }&category=${searchObject.category}&apiKey=${key}`
+          }&category=${searchObject.category}&apiKey=${access}`
         )
         .then(res => {
           console.log("News", res.data);
@@ -40,8 +40,7 @@ class App extends Component {
         .catch(err => {
           console.log(err);
         });
-    };
- 
+    }; 
   }
   render() {
     return (

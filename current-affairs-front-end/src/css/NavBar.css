@@ -9,7 +9,7 @@
 }
 #navbar-container .nav-items .logo {
   color: white;
-  margin: 60px 0 0 130px;
+  margin: 60px 0 0 7%;
   border: 1px dotted white;
   height: 66px;
   border-radius: 5px;
@@ -24,7 +24,7 @@
 }
 #navbar-container .nav-items ul {
   display: flex;
-  margin: 50px 70px;
+  margin: 2rem 5%;
   font-weight: 900;
 }
 #navbar-container .nav-items ul li {
@@ -39,7 +39,7 @@
 }
 #navbar-container .nav-items .buttons-wrap {
   display: flex;
-  margin: 70px 0 0 10%;
+  margin: 70px 0 0 3%;
 }
 #navbar-container .nav-items .buttons-wrap .login {
   text-align: center;
