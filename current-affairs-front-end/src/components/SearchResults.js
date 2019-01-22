@@ -3,8 +3,7 @@ import "../css/SearchResults.css";
 
 import NewsCard from "./NewsCard";
 class SearchResults extends React.Component {
-  render() {
-    console.log("I'm lost in SeachResults", this.props.search);
+  render() {  
     let news = this.props.search ? (
       <div className="container">
         {this.props.search.map((article, i) => {

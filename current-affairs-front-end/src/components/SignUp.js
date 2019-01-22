@@ -60,8 +60,7 @@ class SignUp extends React.Component {
       .post(`${backend}api/users/register`, user)
       .then(response => {
         console.log("SignUp", response);
-        localStorage.setItem("token", response.data.token);
-        this.props.history.push(`/login`);
+        localStorage.setItem("token", response.data.token);      
         this.setState({
           error: false
         });
@@ -92,6 +91,7 @@ class SignUp extends React.Component {
                   <input
                     className="form-control"
                     placeholder="Full Name"
+                    required
                     name="name"
                     type="text"
                     value={this.state.name}
@@ -102,6 +102,7 @@ class SignUp extends React.Component {
                   <input
                     className="form-control"
                     placeholder="Username"
+                    required
                     name="username"
                     type="text"
                     value={this.state.username}
@@ -112,6 +113,7 @@ class SignUp extends React.Component {
                   <input
                     className="form-control"
                     placeholder="Email"
+                    required
                     name="email"
                     type="email"
                     value={this.state.email}
@@ -122,6 +124,7 @@ class SignUp extends React.Component {
                   <input
                     className="form-control"
                     placeholder="Password"
+                    required
                     name="password"
                     type="password"
                     value={this.state.password}
@@ -132,6 +135,7 @@ class SignUp extends React.Component {
                   <input
                     className="form-control"
                     placeholder="Confirm Password"
+                    required
                     name="confirmPassword"
                     type="password"
                     value={this.state.confirmPassword}

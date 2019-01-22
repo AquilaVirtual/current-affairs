@@ -24,7 +24,7 @@
 }
 #navbar-container .nav-items ul {
   display: flex;
-  margin: 2rem 5%;
+  margin: 3rem 5%;
   font-weight: 900;
 }
 #navbar-container .nav-items ul li {
@@ -39,7 +39,7 @@
 }
 #navbar-container .nav-items .buttons-wrap {
   display: flex;
-  margin: 70px 0 0 3%;
+  margin: 70px 0 0 6%;
 }
 #navbar-container .nav-items .buttons-wrap .login {
   text-align: center;

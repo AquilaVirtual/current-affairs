@@ -11,7 +11,6 @@ class LandingPage extends Component {
     super();
     this.state = {};
   }
-
   alert = () => {
     window.alert(
       "This functionality is not available yet, please check back later."

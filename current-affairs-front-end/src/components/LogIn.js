@@ -96,6 +96,7 @@ class LogIn extends React.Component {
                     placeholder="Email"
                     name="username"
                     type="text"
+                    required
                     value={this.state.username}
                     onChange={this.handleInputChange}
                   />
@@ -106,6 +107,7 @@ class LogIn extends React.Component {
                     placeholder="Password"
                     name="password"
                     type="password"
+                    required
                     value={this.state.password}
                     onChange={this.handleInputChange}
                   />

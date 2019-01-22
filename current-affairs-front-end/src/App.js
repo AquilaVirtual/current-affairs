@@ -9,24 +9,25 @@ import SignUp from "./components/SignUp";
 import SearchResults from "./components/SearchResults";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
+import NoResults from "./components/NoResults";
 
 import "./css/App.css";
-;
+let key = process.env.REACT_APP_NEWSAPIKEY;
 class App extends Component {
   constructor() {
     super();
     this.state = {
       search: [],
       category: ""
-    };   
+    };
   }
-  componentWillMount(){
+  componentWillMount() {
     this.search = searchObject => {
       axios
         .get(
           `https://newsapi.org/v2/top-headlines?country=${
             searchObject.countryCode
-          }&category=${searchObject.category}&apiKey=${access}`
+          }&category=${searchObject.category}&apiKey=${key}`
         )
         .then(res => {
           console.log("News", res.data);
@@ -35,17 +36,19 @@ class App extends Component {
           });
         })
         .then(() => {
-          this.props.history.push("/results");
+          this.state.search && this.state.search.length !== 0
+            ? this.props.history.push("/results")
+            : this.props.history.push("/noresults");
         })
         .catch(err => {
           console.log(err);
         });
-    }; 
+    };
   }
   render() {
     return (
       <div className="app-container">
-        <NavBar />      
+        <NavBar />
         <Route
           exact
           path="/"
@@ -53,6 +56,7 @@ class App extends Component {
         />
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route path="/noresults" component={NoResults} />
           <Route
             path="/results"
             render={props => <SearchResults search={this.state.search} />}
