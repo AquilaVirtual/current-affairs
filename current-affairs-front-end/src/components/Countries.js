@@ -19,8 +19,7 @@ class Countries extends React.Component {
       },
       false
     );
-    function changeEventHandler(event) {
-      // You can use “this” to refer to the selected element.
+    function changeEventHandler(event) {  
       if (!event.target.value) alert("Please Select One");
       else alert("You selected" + event.target.value + ".");
     }

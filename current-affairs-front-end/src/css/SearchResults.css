@@ -13,3 +13,17 @@
   margin: 184px 0 20px 0;
   position: absolute;
 }
+.container-body {
+  display: flex;
+  justify-content: center;
+}
+.container-body .no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  margin-top: 300px;
+}
+.container-body .no-results p {
+  font-size: 1.2rem;
+}

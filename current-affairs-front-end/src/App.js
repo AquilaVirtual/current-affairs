@@ -9,7 +9,7 @@ import SignUp from "./components/SignUp";
 import SearchResults from "./components/SearchResults";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
-import NoResults from "./components/NoResults";
+
 
 import "./css/App.css";
 let key = process.env.REACT_APP_NEWSAPIKEY;
@@ -29,16 +29,13 @@ class App extends Component {
             searchObject.countryCode
           }&category=${searchObject.category}&apiKey=${key}`
         )
-        .then(res => {
-          console.log("News", res.data);
+        .then(response => {          
           this.setState({
-            search: res.data.articles
+            search: response.data.articles
           });
         })
-        .then(() => {
-          this.state.search && this.state.search.length !== 0
-            ? this.props.history.push("/results")
-            : this.props.history.push("/noresults");
+        .then(() => {         
+             this.props.history.push("/results")         
         })
         .catch(err => {
           console.log(err);
@@ -55,8 +52,7 @@ class App extends Component {
           render={props => <Search search={this.search} />}
         />
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/noresults" component={NoResults} />
+          <Route exact path="/" component={LandingPage} />        
           <Route
             path="/results"
             render={props => <SearchResults search={this.state.search} />}
