@@ -20,25 +20,25 @@ class NavBar extends Component {
       open: false
     };
   }
-  componentDidMount() {
-    window.onscroll = function() {
-      myFunction();
-    };
 
-    // Get the navbar-container
-    let navbar = document.getElementById("navbar-container");
+ componentDidMount() {
+window.onscroll = function() {myFunction()};
 
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
+// Get the navbar-container
+let navbar = document.getElementById("navbar-container");
 
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
   }
+}
+ }
+
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -61,18 +61,16 @@ class NavBar extends Component {
       "This functionality is not available yet, please check back later."
     );
   };
+  redirectToHome = () => {
+    this.props.history.push("/");
+  };
   render() {
     const { anchorEl } = this.state;
 
     return (
       <div id="navbar-container">
         <div className="nav-items">
-          <div
-            className="logo"
-            onClick={() => {
-              this.props.history.push("/");
-            }}
-          >
+          <div className="logo" onClick={this.redirectToHome}>
             Current <p>Affairs</p>
           </div>
           <ul>

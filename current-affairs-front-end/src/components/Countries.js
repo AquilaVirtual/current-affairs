@@ -9,21 +9,20 @@ class Countries extends React.Component {
       value: ""
     };
   }
-  alert = () => {
-    document.addEventListener(
-      "DOMContentLoaded",
-      function() {
-        document.querySelector(
-          'select[name="country"]'
-        ).onchange = changeEventHandler;
-      },
-      false
-    );
-    function changeEventHandler(event) {  
-      if (!event.target.value) alert("Please Select One");
-      else alert("You selected" + event.target.value + ".");
-    }
-  };
+  
+   getCountry = () => {  
+  let sel = document.getElementById('countries');
+  let opt;
+  for ( let i = 0, len = sel.options.length; i < len; i++ ) {
+      opt = sel.options[i];
+      if ( opt.selected === true ) {
+        console.log("This item",opt.innerHTML, this.props.value)
+          break;
+      }
+  }
+  return opt;
+   };
+
   render() {
     return (
       <div>
@@ -55,7 +54,7 @@ class Countries extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <select id="countries" name="country">
+                <select id="countries" name="countries" onChange={this.getCountry}>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -360,7 +359,7 @@ class Countries extends React.Component {
                   Cancel
                 </button>
                 <button
-                  onClick={this.alert}
+                  onClick={this.getCountry}
                   className="country-btn"
                   data-dismiss="modal"
                 >

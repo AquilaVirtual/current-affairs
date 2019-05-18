@@ -366,7 +366,7 @@ class Search extends Component {
       }
     } else {
       //a placeholer for modal
-      alert("Please enter a country to search for.");
+      alert("Please enter a country to search.");
     }
   };
 

@@ -52,10 +52,10 @@ class LogIn extends React.Component {
         }, 200);
       })
       .catch(err => {
-        console.log(err);
+        console.log("We have an error here", err.response);
         this.setState({
           error: true,
-          errorMessage: err.response.data.error
+          //errorMessage: err.response.data
         });
       });
   };
